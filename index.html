@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" itemprop="description" content="【パワプロ2022】パワフェスの対戦相手別にコンボを検索するツールです。">
+    <title>【パワプロ2022】対戦相手コンボ検索ツール【パワフェス】</title>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <style id='global-styles-inline-css' type='text/css'>
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+    </style>
+    <link rel='stylesheet' id='parent-style-css'
+        href='https://bocchi-gamer.com/wp-content/themes/jin/style.css?ver=6.0.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='theme-style-css'
+        href='https://bocchi-gamer.com/wp-content/themes/jin-child/style.css?ver=6.0.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='fontawesome-style-css'
+        href='https://use.fontawesome.com/releases/v5.6.3/css/all.css?ver=6.0.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='swiper-style-css'
+        href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css?ver=6.0.2' type='text/css'
+        media='all' />
+    <link rel="https://api.w.org/" href="https://bocchi-gamer.com/wp-json/" />
+    <link rel="alternate" type="application/json" href="https://bocchi-gamer.com/wp-json/wp/v2/posts/5458" />
+    <link rel="canonical" href="https://bocchi-gamer.com/pawafes2022-combo-tool/" />
+    <link rel='shortlink' href='https://bocchi-gamer.com/?p=5458' />
+    <link rel="alternate" type="application/json+oembed"
+        href="https://bocchi-gamer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbocchi-gamer.com%2Fpawafes2022-combo-tool%2F" />
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://bocchi-gamer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbocchi-gamer.com%2Fpawafes2022-combo-tool%2F&#038;format=xml" />
+    <style type="text/css">
+        #wrapper {
+            background-color: #fffefc;
+            background-image: url();
+        }
+
+        .related-entry-headline-text span:before,
+        #comment-title span:before,
+        #reply-title span:before {
+            background-color: #6086e0;
+            border-color: #6086e0 !important;
+        }
+
+        #breadcrumb:after,
+        #page-top a {
+            background-color: #6086e0;
+        }
+
+        footer {
+            background-color: #6086e0;
+        }
+
+        .footer-inner a,
+        #copyright,
+        #copyright-center {
+            border-color: #000e5e !important;
+            color: #000e5e !important;
+        }
+
+        #footer-widget-area {
+            border-color: #000e5e !important;
+        }
+
+        .page-top-footer a {
+            color: #6086e0 !important;
+        }
+
+        #breadcrumb ul li,
+        #breadcrumb ul li a {
+            color: #6086e0 !important;
+        }
+
+        body,
+        a,
+        a:link,
+        a:visited,
+        .my-profile,
+        .widgettitle,
+        .tabBtn-mag label {
+            color: #333333;
+        }
+
+        a:hover {
+            color: #34d2f9;
+        }
+
+        .widget_nav_menu ul>li>a:before,
+        .widget_categories ul>li>a:before,
+        .widget_pages ul>li>a:before,
+        .widget_recent_entries ul>li>a:before,
+        .widget_archive ul>li>a:before,
+        .widget_archive form:after,
+        .widget_categories form:after,
+        .widget_nav_menu ul>li>ul.sub-menu>li>a:before,
+        .widget_categories ul>li>.children>li>a:before,
+        .widget_pages ul>li>.children>li>a:before,
+        .widget_nav_menu ul>li>ul.sub-menu>li>ul.sub-menu li>a:before,
+        .widget_categories ul>li>.children>li>.children li>a:before,
+        .widget_pages ul>li>.children>li>.children li>a:before {
+            color: #6086e0;
+        }
+
+        .widget_nav_menu ul .sub-menu .sub-menu li a:before {
+            background-color: #333333 !important;
+        }
+
+        footer .footer-widget,
+        footer .footer-widget a,
+        footer .footer-widget ul li,
+        .footer-widget.widget_nav_menu ul>li>a:before,
+        .footer-widget.widget_categories ul>li>a:before,
+        .footer-widget.widget_recent_entries ul>li>a:before,
+        .footer-widget.widget_pages ul>li>a:before,
+        .footer-widget.widget_archive ul>li>a:before,
+        footer .widget_tag_cloud .tagcloud a:before {
+            color: #000e5e !important;
+            border-color: #000e5e !important;
+        }
+
+        footer .footer-widget .widgettitle {
+            color: #000e5e !important;
+            border-color: #553ce0 !important;
+        }
+
+        footer .widget_nav_menu ul .children .children li a:before,
+        footer .widget_categories ul .children .children li a:before,
+        footer .widget_nav_menu ul .sub-menu .sub-menu li a:before {
+            background-color: #000e5e !important;
+        }
+
+        #drawernav a:hover,
+        .post-list-title,
+        #prev-next p,
+        #toc_container .toc_list li a {
+            color: #333333 !important;
+        }
+
+        #header-box {
+            background-color: #6086e0;
+        }
+
+        #header-box .header-box10-bg:before,
+        #header-box .header-box11-bg:before {
+            background-color: #6086e0 !important;
+
+        }
+
+        @media (min-width: 768px) {
+
+            #header-box .header-box10-bg:before,
+            #header-box .header-box11-bg:before {
+                border-radius: 2px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #header-box.header-style10 {
+                position: relative !important;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            #header-box.header-style10 {
+                position: relative !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .top-image-meta {
+                margin-top: calc(0px - 30px);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-image-meta {
+                margin-top: calc(0px);
+            }
+        }
+
+        .pickup-contents:before {
+            background-color: #6086e0 !important;
+        }
+
+        .main-image-text {
+            color: #686357;
+        }
+
+        .main-image-text-sub {
+            color: #686357;
+        }
+
+        @media (min-width: 481px) {
+            #site-info {
+                padding-top: 15px !important;
+                padding-bottom: 15px !important;
+            }
+        }
+
+        #site-info span a {
+            color: #ffffff !important;
+        }
+
+        #headmenu .headsns .line a svg {
+            fill: #ffffff !important;
+        }
+
+        #headmenu .headsns a,
+        #headmenu {
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+        }
+
+        .profile-follow .line-sns a svg {
+            fill: #6086e0 !important;
+        }
+
+        .profile-follow .line-sns a:hover svg {
+            fill: #553ce0 !important;
+        }
+
+        .profile-follow a {
+            color: #6086e0 !important;
+            border-color: #6086e0 !important;
+        }
+
+        .profile-follow a:hover,
+        #headmenu .headsns a:hover {
+            color: #553ce0 !important;
+            border-color: #553ce0 !important;
+        }
+
+        .search-box:hover {
+            color: #553ce0 !important;
+            border-color: #553ce0 !important;
+        }
+
+        #header #headmenu .headsns .line a:hover svg {
+            fill: #553ce0 !important;
+        }
+
+        .cps-icon-bar,
+        #navtoggle:checked+.sp-menu-open .cps-icon-bar {
+            background-color: #ffffff;
+        }
+
+        #nav-container {
+            background-color: #6086e0;
+        }
+
+        .menu-box .menu-item svg {
+            fill: #ffffff;
+        }
+
+        #drawernav ul.menu-box>li>a,
+        #drawernav2 ul.menu-box>li>a,
+        #drawernav3 ul.menu-box>li>a,
+        #drawernav4 ul.menu-box>li>a,
+        #drawernav5 ul.menu-box>li>a,
+        #drawernav ul.menu-box>li.menu-item-has-children:after,
+        #drawernav2 ul.menu-box>li.menu-item-has-children:after,
+        #drawernav3 ul.menu-box>li.menu-item-has-children:after,
+        #drawernav4 ul.menu-box>li.menu-item-has-children:after,
+        #drawernav5 ul.menu-box>li.menu-item-has-children:after {
+            color: #ffffff !important;
+        }
+
+        #drawernav ul.menu-box li a,
+        #drawernav2 ul.menu-box li a,
+        #drawernav3 ul.menu-box li a,
+        #drawernav4 ul.menu-box li a,
+        #drawernav5 ul.menu-box li a {
+            font-size: 10px !important;
+        }
+
+        #drawernav3 ul.menu-box>li {
+            color: #333333 !important;
+        }
+
+        #drawernav4 .menu-box>.menu-item>a:after,
+        #drawernav3 .menu-box>.menu-item>a:after,
+        #drawernav .menu-box>.menu-item>a:after {
+            background-color: #ffffff !important;
+        }
+
+        #drawernav2 .menu-box>.menu-item:hover,
+        #drawernav5 .menu-box>.menu-item:hover {
+            border-top-color: #6086e0 !important;
+        }
+
+        .cps-info-bar a {
+            background-color: #ffcd44 !important;
+        }
+
+        @media (min-width: 768px) {
+            .post-list-mag .post-list-item:not(:nth-child(2n)) {
+                margin-right: 2.6%;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            #tab-1:checked~.tabBtn-mag li [for="tab-1"]:after,
+            #tab-2:checked~.tabBtn-mag li [for="tab-2"]:after,
+            #tab-3:checked~.tabBtn-mag li [for="tab-3"]:after,
+            #tab-4:checked~.tabBtn-mag li [for="tab-4"]:after {
+                border-top-color: #6086e0 !important;
+            }
+
+            .tabBtn-mag label {
+                border-bottom-color: #6086e0 !important;
+            }
+        }
+
+        #tab-1:checked~.tabBtn-mag li [for="tab-1"],
+        #tab-2:checked~.tabBtn-mag li [for="tab-2"],
+        #tab-3:checked~.tabBtn-mag li [for="tab-3"],
+        #tab-4:checked~.tabBtn-mag li [for="tab-4"],
+        #prev-next a.next:after,
+        #prev-next a.prev:after,
+        .more-cat-button a:hover span:before {
+            background-color: #6086e0 !important;
+        }
+
+
+        .swiper-slide .post-list-cat,
+        .post-list-mag .post-list-cat,
+        .post-list-mag3col .post-list-cat,
+        .post-list-mag-sp1col .post-list-cat,
+        .swiper-pagination-bullet-active,
+        .pickup-cat,
+        .post-list .post-list-cat,
+        #breadcrumb .bcHome a:hover span:before,
+        .popular-item:nth-child(1) .pop-num,
+        .popular-item:nth-child(2) .pop-num,
+        .popular-item:nth-child(3) .pop-num {
+            background-color: #553ce0 !important;
+        }
+
+        .sidebar-btn a,
+        .profile-sns-menu {
+            background-color: #553ce0 !important;
+        }
+
+        .sp-sns-menu a,
+        .pickup-contents-box a:hover .pickup-title {
+            border-color: #6086e0 !important;
+            color: #6086e0 !important;
+        }
+
+        .pro-line svg {
+            fill: #6086e0 !important;
+        }
+
+        .cps-post-cat a,
+        .meta-cat,
+        .popular-cat {
+            background-color: #553ce0 !important;
+            border-color: #553ce0 !important;
+        }
+
+        .tagicon,
+        .tag-box a,
+        #toc_container .toc_list>li,
+        #toc_container .toc_title {
+            color: #6086e0 !important;
+        }
+
+        .widget_tag_cloud a::before {
+            color: #333333 !important;
+        }
+
+        .tag-box a,
+        #toc_container:before {
+            border-color: #6086e0 !important;
+        }
+
+        .cps-post-cat a:hover {
+            color: #34d2f9 !important;
+        }
+
+        .pagination li:not([class*="current"]) a:hover,
+        .widget_tag_cloud a:hover {
+            background-color: #6086e0 !important;
+        }
+
+        .pagination li:not([class*="current"]) a:hover {
+            opacity: 0.5 !important;
+        }
+
+        .pagination li.current a {
+            background-color: #6086e0 !important;
+            border-color: #6086e0 !important;
+        }
+
+        .nextpage a:hover span {
+            color: #6086e0 !important;
+            border-color: #6086e0 !important;
+        }
+
+        .cta-content:before {
+            background-color: #4696a3 !important;
+        }
+
+        .cta-text,
+        .info-title {
+            color: #fff !important;
+        }
+
+        #footer-widget-area.footer_style1 .widgettitle {
+            border-color: #553ce0 !important;
+        }
+
+        .sidebar_style1 .widgettitle,
+        .sidebar_style5 .widgettitle {
+            border-color: #6086e0 !important;
+        }
+
+        .sidebar_style2 .widgettitle,
+        .sidebar_style4 .widgettitle,
+        .sidebar_style6 .widgettitle,
+        #home-bottom-widget .widgettitle,
+        #home-top-widget .widgettitle,
+        #post-bottom-widget .widgettitle,
+        #post-top-widget .widgettitle {
+            background-color: #6086e0 !important;
+        }
+
+        #home-bottom-widget .widget_search .search-box input[type="submit"],
+        #home-top-widget .widget_search .search-box input[type="submit"],
+        #post-bottom-widget .widget_search .search-box input[type="submit"],
+        #post-top-widget .widget_search .search-box input[type="submit"] {
+            background-color: #553ce0 !important;
+        }
+
+        .tn-logo-size {
+            font-size: 180% !important;
+        }
+
+        @media (min-width: 481px) {
+            .tn-logo-size img {
+                width: calc(180%*0.5) !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .tn-logo-size img {
+                width: calc(180%*2.2) !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .tn-logo-size img {
+                width: 180% !important;
+            }
+        }
+
+        .sp-logo-size {
+            font-size: 120% !important;
+        }
+
+        .sp-logo-size img {
+            width: 120% !important;
+        }
+
+        .cps-post-main ul>li:before,
+        .cps-post-main ol>li:before {
+            background-color: #553ce0 !important;
+        }
+
+        .profile-card .profile-title {
+            background-color: #6086e0 !important;
+        }
+
+        .profile-card {
+            border-color: #6086e0 !important;
+        }
+
+        .cps-post-main a {
+            color: #1409ea;
+        }
+
+        .cps-post-main .marker {
+            background: -webkit-linear-gradient(transparent 60%, #b0d5e8 0%);
+            background: linear-gradient(transparent 60%, #b0d5e8 0%);
+        }
+
+        .cps-post-main .marker2 {
+            background: -webkit-linear-gradient(transparent 60%, #f2c1ce 0%);
+            background: linear-gradient(transparent 60%, #f2c1ce 0%);
+        }
+
+        .cps-post-main .jic-sc {
+            color: #e9546b;
+        }
+
+
+        .simple-box1 {
+            border-color: #ffcd44 !important;
+        }
+
+        .simple-box2 {
+            border-color: #f2bf7d !important;
+        }
+
+        .simple-box3 {
+            border-color: #ffcd44 !important;
+        }
+
+        .simple-box4 {
+            border-color: #7badd8 !important;
+        }
+
+        .simple-box4:before {
+            background-color: #7badd8;
+        }
+
+        .simple-box5 {
+            border-color: #e896c7 !important;
+        }
+
+        .simple-box5:before {
+            background-color: #e896c7;
+        }
+
+        .simple-box6 {
+            background-color: #fffdef !important;
+        }
+
+        .simple-box7 {
+            border-color: #def1f9 !important;
+        }
+
+        .simple-box7:before {
+            background-color: #def1f9 !important;
+        }
+
+        .simple-box8 {
+            border-color: #96ddc1 !important;
+        }
+
+        .simple-box8:before {
+            background-color: #96ddc1 !important;
+        }
+
+        .simple-box9:before {
+            background-color: #e1c0e8 !important;
+        }
+
+        .simple-box9:after {
+            border-color: #e1c0e8 #e1c0e8 #fff #fff !important;
+        }
+
+        .kaisetsu-box1:before,
+        .kaisetsu-box1-title {
+            background-color: #ffb49e !important;
+        }
+
+        .kaisetsu-box2 {
+            border-color: #6396a3 !important;
+        }
+
+        .kaisetsu-box2-title {
+            background-color: #6396a3 !important;
+        }
+
+        .kaisetsu-box4 {
+            border-color: #ea91a9 !important;
+        }
+
+        .kaisetsu-box4-title {
+            background-color: #ea91a9 !important;
+        }
+
+        .kaisetsu-box5:before {
+            background-color: #57b3ba !important;
+        }
+
+        .kaisetsu-box5-title {
+            background-color: #57b3ba !important;
+        }
+
+        .concept-box1 {
+            border-color: #85db8f !important;
+        }
+
+        .concept-box1:after {
+            background-color: #85db8f !important;
+        }
+
+        .concept-box1:before {
+            content: "ポイント" !important;
+            color: #85db8f !important;
+        }
+
+        .concept-box2 {
+            border-color: #f7cf6a !important;
+        }
+
+        .concept-box2:after {
+            background-color: #f7cf6a !important;
+        }
+
+        .concept-box2:before {
+            content: "注意点" !important;
+            color: #f7cf6a !important;
+        }
+
+        .concept-box3 {
+            border-color: #86cee8 !important;
+        }
+
+        .concept-box3:after {
+            background-color: #86cee8 !important;
+        }
+
+        .concept-box3:before {
+            content: "良い例" !important;
+            color: #86cee8 !important;
+        }
+
+        .concept-box4 {
+            border-color: #ed8989 !important;
+        }
+
+        .concept-box4:after {
+            background-color: #ed8989 !important;
+        }
+
+        .concept-box4:before {
+            content: "悪い例" !important;
+            color: #ed8989 !important;
+        }
+
+        .concept-box5 {
+            border-color: #9e9e9e !important;
+        }
+
+        .concept-box5:after {
+            background-color: #9e9e9e !important;
+        }
+
+        .concept-box5:before {
+            content: "参考" !important;
+            color: #9e9e9e !important;
+        }
+
+        .concept-box6 {
+            border-color: #8eaced !important;
+        }
+
+        .concept-box6:after {
+            background-color: #8eaced !important;
+        }
+
+        .concept-box6:before {
+            content: "メモ" !important;
+            color: #8eaced !important;
+        }
+
+        .innerlink-box1,
+        .blog-card {
+            border-color: #2832a0 !important;
+        }
+
+        .innerlink-box1-title {
+            background-color: #2832a0 !important;
+            border-color: #2832a0 !important;
+        }
+
+        .innerlink-box1:before,
+        .blog-card-hl-box {
+            background-color: #2832a0 !important;
+        }
+
+        .jin-ac-box01-title::after {
+            color: #6086e0;
+        }
+
+        .color-button01 a,
+        .color-button01 a:hover,
+        .color-button01:before {
+            background-color: #4696a3 !important;
+        }
+
+        .top-image-btn-color a,
+        .top-image-btn-color a:hover,
+        .top-image-btn-color:before {
+            background-color: #ffcd44 !important;
+        }
+
+        .color-button02 a,
+        .color-button02 a:hover,
+        .color-button02:before {
+            background-color: #ffcd44 !important;
+        }
+
+        .color-button01-big a,
+        .color-button01-big a:hover,
+        .color-button01-big:before {
+            background-color: #ffcd44 !important;
+        }
+
+        .color-button01-big a,
+        .color-button01-big:before {
+            border-radius: 5px !important;
+        }
+
+        .color-button01-big a {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+
+        .color-button02-big a,
+        .color-button02-big a:hover,
+        .color-button02-big:before {
+            background-color: #79c3ce !important;
+        }
+
+        .color-button02-big a,
+        .color-button02-big:before {
+            border-radius: 40px !important;
+        }
+
+        .color-button02-big a {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+
+        .color-button01-big {
+            width: 75% !important;
+        }
+
+        .color-button02-big {
+            width: 75% !important;
+        }
+
+
+        .top-image-btn-color:before,
+        .color-button01:before,
+        .color-button02:before,
+        .color-button01-big:before,
+        .color-button02-big:before {
+            bottom: -1px;
+            left: -1px;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+            -webkit-transition: all .4s;
+            transition: all .4s;
+        }
+
+        .top-image-btn-color a:hover,
+        .color-button01 a:hover,
+        .color-button02 a:hover,
+        .color-button01-big a:hover,
+        .color-button02-big a:hover {
+            -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+            -webkit-filter: brightness(0.95);
+            filter: brightness(0.95);
+        }
+
+        .top-image-btn-color:hover:before,
+        .color-button01:hover:before,
+        .color-button02:hover:before,
+        .color-button01-big:hover:before,
+        .color-button02-big:hover:before {
+            -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+            box-shadow: none !important;
+        }
+
+        .h2-style01 h2,
+        .h2-style02 h2:before,
+        .h2-style03 h2,
+        .h2-style04 h2:before,
+        .h2-style05 h2,
+        .h2-style07 h2:before,
+        .h2-style07 h2:after,
+        .h3-style03 h3:before,
+        .h3-style02 h3:before,
+        .h3-style05 h3:before,
+        .h3-style07 h3:before,
+        .h2-style08 h2:after,
+        .h2-style10 h2:before,
+        .h2-style10 h2:after,
+        .h3-style02 h3:after,
+        .h4-style02 h4:before {
+            background-color: #6086e0 !important;
+        }
+
+        .h3-style01 h3,
+        .h3-style04 h3,
+        .h3-style05 h3,
+        .h3-style06 h3,
+        .h4-style01 h4,
+        .h2-style02 h2,
+        .h2-style08 h2,
+        .h2-style08 h2:before,
+        .h2-style09 h2,
+        .h4-style03 h4 {
+            border-color: #6086e0 !important;
+        }
+
+        .h2-style05 h2:before {
+            border-top-color: #6086e0 !important;
+        }
+
+        .h2-style06 h2:before,
+        .sidebar_style3 .widgettitle:after {
+            background-image: linear-gradient(-45deg,
+                    transparent 25%,
+                    #6086e0 25%,
+                    #6086e0 50%,
+                    transparent 50%,
+                    transparent 75%,
+                    #6086e0 75%,
+                    #6086e0);
+        }
+
+        .jin-h2-icons.h2-style02 h2 .jic:before,
+        .jin-h2-icons.h2-style04 h2 .jic:before,
+        .jin-h2-icons.h2-style06 h2 .jic:before,
+        .jin-h2-icons.h2-style07 h2 .jic:before,
+        .jin-h2-icons.h2-style08 h2 .jic:before,
+        .jin-h2-icons.h2-style09 h2 .jic:before,
+        .jin-h2-icons.h2-style10 h2 .jic:before,
+        .jin-h3-icons.h3-style01 h3 .jic:before,
+        .jin-h3-icons.h3-style02 h3 .jic:before,
+        .jin-h3-icons.h3-style03 h3 .jic:before,
+        .jin-h3-icons.h3-style04 h3 .jic:before,
+        .jin-h3-icons.h3-style05 h3 .jic:before,
+        .jin-h3-icons.h3-style06 h3 .jic:before,
+        .jin-h3-icons.h3-style07 h3 .jic:before,
+        .jin-h4-icons.h4-style01 h4 .jic:before,
+        .jin-h4-icons.h4-style02 h4 .jic:before,
+        .jin-h4-icons.h4-style03 h4 .jic:before,
+        .jin-h4-icons.h4-style04 h4 .jic:before {
+            color: #6086e0;
+        }
+
+        @media all and (-ms-high-contrast:none) {
+
+            *::-ms-backdrop,
+            .color-button01:before,
+            .color-button02:before,
+            .color-button01-big:before,
+            .color-button02-big:before {
+                background-color: #595857 !important;
+            }
+        }
+
+        .jin-lp-h2 h2,
+        .jin-lp-h2 h2 {
+            background-color: transparent !important;
+            border-color: transparent !important;
+            color: #333333 !important;
+        }
+
+        .jincolumn-h3style2 {
+            border-color: #6086e0 !important;
+        }
+
+        .jinlph2-style1 h2:first-letter {
+            color: #6086e0 !important;
+        }
+
+        .jinlph2-style2 h2,
+        .jinlph2-style3 h2 {
+            border-color: #6086e0 !important;
+        }
+
+        .jin-photo-title .jin-fusen1-down,
+        .jin-photo-title .jin-fusen1-even,
+        .jin-photo-title .jin-fusen1-up {
+            border-left-color: #6086e0;
+        }
+
+        .jin-photo-title .jin-fusen2,
+        .jin-photo-title .jin-fusen3 {
+            background-color: #6086e0;
+        }
+
+        .jin-photo-title .jin-fusen2:before,
+        .jin-photo-title .jin-fusen3:before {
+            border-top-color: #6086e0;
+        }
+
+        .has-huge-font-size {
+            font-size: 42px !important;
+        }
+
+        .has-large-font-size {
+            font-size: 36px !important;
+        }
+
+        .has-medium-font-size {
+            font-size: 20px !important;
+        }
+
+        .has-normal-font-size {
+            font-size: 16px !important;
+        }
+
+        .has-small-font-size {
+            font-size: 13px !important;
+        }
+    </style>
+    <style type="text/css">
+        .broken_link,
+        a.broken_link {
+            text-decoration: line-through;
+        }
+    </style>
+    <style type="text/css">
+        /*<!-- rtoc -->*/
+        .rtoc-mokuji-content {
+            background-color: #ffffff;
+        }
+
+        .rtoc-mokuji-content.frame1 {
+            border: 1px solid #3f9cff;
+        }
+
+        .rtoc-mokuji-content #rtoc-mokuji-title {
+            color: #3f9cff;
+        }
+
+        .rtoc-mokuji-content .rtoc-mokuji li>a {
+            color: #555555;
+        }
+
+        .rtoc-mokuji-content .mokuji_ul.level-1>.rtoc-item::before {
+            background-color: #3f9cff !important;
+        }
+
+        .rtoc-mokuji-content .mokuji_ul.level-2>.rtoc-item::before {
+            background-color: #3f9cff !important;
+        }
+
+        .rtoc-mokuji-content.frame2::before,
+        .rtoc-mokuji-content.frame3,
+        .rtoc-mokuji-content.frame4,
+        .rtoc-mokuji-content.frame5 {
+            border-color: #3f9cff !important;
+        }
+
+        .rtoc-mokuji-content.frame5::before,
+        .rtoc-mokuji-content.frame5::after {
+            background-color: #3f9cff;
+        }
+
+        .widget #rtoc-mokuji-wrapper .rtoc-mokuji.level-1 .rtoc-item.rtoc-current:after,
+        #scrollad #rtoc-mokuji-wrapper .rtoc-mokuji.level-1 .rtoc-item.rtoc-current:after {
+            background-color: #3f9cff !important;
+        }
+
+        .cls-1,
+        .cls-2 {
+            stroke: #3f9cff;
+        }
+
+        .rtoc-mokuji-content .decimal_ol.level-2>.rtoc-item::before,
+        .rtoc-mokuji-content .mokuji_ol.level-2>.rtoc-item::before,
+        .rtoc-mokuji-content .decimal_ol.level-2>.rtoc-item::after {
+            color: #3f9cff;
+            background-color: #3f9cff;
+        }
+
+        .rtoc-mokuji-content .rtoc-mokuji.level-1>.rtoc-item::before {
+            color: #3f9cff;
+        }
+
+        .rtoc-mokuji-content .decimal_ol>.rtoc-item::after {
+            background-color: #3f9cff !important;
+        }
+
+        .rtoc-mokuji-content .decimal_ol>.rtoc-item::before {
+            color: #3f9cff;
+        }
+
+        /*rtoc_return*/
+        #rtoc_return a::before {
+            background-image: url(https://bocchi-gamer.com/wp-content/plugins/rich-table-of-content/include/../img/rtoc_return.png);
+        }
+
+        #rtoc_return a {
+            background-color: #3f9cff !important;
+        }
+
+        /* アクセントポイント */
+        .rtoc-mokuji-content .level-1>.rtoc-item #rtocAC.accent-point::after {
+            background-color: #3f9cff;
+        }
+
+        .rtoc-mokuji-content .level-2>.rtoc-item #rtocAC.accent-point::after {
+            background-color: #3f9cff;
+        }
+
+        /* rtoc_addon */
+    </style>
+    <style type="text/css" id="wp-custom-css">
+        .proflink a {
+            display: block;
+            text-align: center;
+            padding: 7px 10px;
+            background: #aaa;
+            /*カラーは変更*/
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 20px;
+            border: 3px double #fff;
+            font-size: 0.65rem;
+            color: #fff;
+        }
+
+        .proflink a:hover {
+            opacity: 0.75;
+        }
+
+
+        .data-table thead tr {
+            background-color: royalblue;
+            color: white;
+        }
+
+        .data-table thead tr th {
+            white-space: nowrap;
+            font-size: 0.8em;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background-color: aliceblue;
+        }
+
+        .data-table tbody tr td {
+            font-size: 0.8em;
+            padding: 5px;
+        }
+
+        .data-table td img {
+            margin: 0;
+        }
+    </style>
+
+    <!--カエレバCSS-->
+    <!--アプリーチCSS-->
+
+</head>
+
+<body
+    class="post-template post-template-onecolumn-960 post-template-onecolumn-960-php single single-post postid-5458 single-format-standard"
+    id="nofont-style">
+    <div id="wrapper">
+
+
+        <div id="scroll-content" class="animate-off">
+            <div id="contents">
+                <!--メインコンテンツ-->
+                <main id="onecolumn960" class="main-contents article_style1 animate-off" itemprop="mainContentOfPage">
+                    <section class="cps-post-box hentry">
+                        <article class="cps-post">
+                            <header class="cps-post-header">
+                                <span class="cps-post-cat category-pawafes2022" itemprop="keywords"><a
+                                        href="https://bocchi-gamer.com/category/pawapro/pawafes2022/"
+                                        style="background-color:!important;">パワフェス2022</a></span>
+                                <h1 class="cps-post-title entry-title" itemprop="headline">【パワプロ2022】対戦相手コンボ検索ツール【パワフェス】
+                                </h1>
+                                <div class="cps-post-meta vcard">
+                                    <span class="writer fn" itemprop="author" itemscope
+                                        itemtype="https://schema.org/Person"><span
+                                            itemprop="name">nurusapo</span></span>
+                                    <span class="cps-post-date-box">
+                                        <span class="cps-post-date"><i class="jic jin-ifont-watch"
+                                                aria-hidden="true"></i>&nbsp;<time
+                                                class="entry-date date published updated"
+                                                datetime="2022-06-26T15:47:28+09:00">2022年6月26日</time></span>
+                                    </span>
+                                </div>
+                            </header>
+                            <div class="cps-post-main-box">
+                                <div class="cps-post-main jin-h2-icons jin-bookmarkicon-h2 jin-h3-icons jin-checkcircleicon-h3 jin-h4-icons jin-checkicon-h4 h2-style03 h3-style06 h4-style03 entry-content xs-size s-size-sp"
+                                    itemprop="articleBody">
+
+                                    <div class="clearfix"></div>
+
+
+                                    <section>
+                                        <h3 id="rtoc-1">対戦相手選択</h3>
+                                        <p>チーム名をクリックすると、そのチームの選手のコンボが確認できます。<br>対戦ラウンドのタブをクリックするとチーム一覧が切り替わります。</p>
+                                        <p>※まだすべてのコンボには対応できていません。</p>
+                                        <style>
+                                            /* ラウンド選択 */
+                                            #tab {
+                                                position: relative;
+                                                margin: 0;
+                                                list-style-type: none;
+                                                z-index: 100;
+                                            }
+
+                                            label,
+                                            input[type=checkbox] {
+                                                cursor: pointer;
+                                            }
+
+                                            #tab p {
+                                                position: relative;
+                                                /* z-indexを効かせるために必要 */
+                                                display: inline-block;
+                                                border-radius: 0.5em 0.5em 0 0;
+                                                border-top: solid 1px #333;
+                                                border-right: solid 1px #333;
+                                                border-bottom: solid 1px #333;
+                                                border-left: solid 1px #333;
+                                                margin: 0;
+                                                padding: 0;
+                                                width: 3em;
+                                                font-weight: blod;
+                                                z-index: 100;
+                                            }
+
+                                            .round1 {
+                                                background-color: #dbffdb;
+                                            }
+
+                                            .round2 {
+                                                background-color: #e5f2ff;
+                                            }
+
+                                            .round3 {
+                                                background-color: #eddbff;
+                                            }
+
+                                            .daihyo {
+                                                background-color: #ffd6ff;
+                                            }
+
+                                            .sansakuscout {
+                                                background-color: #ffdbdb;
+                                            }
+
+                                            #tab p label {
+                                                display: inline-block;
+                                                width: 100%;
+                                                padding: 3px 0;
+                                                text-align: center;
+                                                font-size: 0.9em;
+                                                font-weight: bold;
+                                            }
+
+                                            #tab input[type=radio] {
+                                                display: none;
+                                            }
+
+                                            #teamList #teamsCell div {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                padding: 1em 3px;
+                                                font-size: 0.9em;
+                                            }
+
+                                            #teamList div label {
+                                                margin: 3px 1em;
+                                            }
+
+                                            /* チーム一覧 */
+                                            #teamList {
+                                                position: relative;
+                                                top: -1px;
+                                                margin: 0;
+                                                border: solid 1px #333;
+                                                z-index: 10;
+                                            }
+
+                                            /* 検索結果 */
+
+                                            #resultTable {
+                                                border-collapse: collapse;
+                                                width: 100%;
+                                            }
+
+                                            #resultTable th,
+                                            #resultTable td {
+                                                padding: 0.5em;
+                                            }
+
+                                            /* チーム名表示部分 */
+                                            .round1 tbody tr:first-child {
+                                                background-color: #008000;
+                                                color: white;
+                                            }
+
+                                            .round2 tbody tr:first-child {
+                                                background-color: #0000cd;
+                                                color: white;
+                                            }
+
+                                            .round3 tbody tr:first-child {
+                                                background-color: #4b0082;
+                                                color: white;
+                                            }
+
+                                            .daihyo tbody tr:first-child {
+                                                background-color: #c71585;
+                                                color: white;
+                                            }
+
+                                            .sansakuscout tbody tr:first-child {
+                                                background-color: #8b0000;
+                                                color: white;
+                                            }
+
+                                            /* しましまの白い部分 */
+                                            table tbody tr:nth-child(even) {
+                                                background-color: white;
+                                            }
+
+                                            /* 選手名 */
+                                            .round1 tbody tr:nth-child(2n+2) th {
+                                                background-color: #edffdb;
+                                            }
+
+                                            .round1 tbody tr:nth-child(2n+3) th {
+                                                background-color: #c1ffc1;
+                                            }
+
+                                            .round2 tbody tr:nth-child(2n+2) th {
+                                                background-color: #eff7ff;
+                                            }
+
+                                            .round2 tbody tr:nth-child(2n+3) th {
+                                                background-color: #cce5ff;
+                                            }
+
+                                            .round3 tbody tr:nth-child(2n+2) th {
+                                                background-color: #f7efff;
+                                            }
+
+                                            .round3 tbody tr:nth-child(2n+3) th {
+                                                background-color: #ddbcff;
+                                            }
+
+                                            .daihyo tbody tr:nth-child(2n+2) th {
+                                                background-color: #ffe0ff;
+                                            }
+
+                                            .daihyo tbody tr:nth-child(2n+3) th {
+                                                background-color: #ffc1e0;
+                                            }
+
+                                            .sansakuscout tbody tr:nth-child(2n+2) th {
+                                                background-color: #ffefef;
+                                            }
+
+                                            .sansakuscout tbody tr:nth-child(2n+3) th {
+                                                background-color: #ffc1c1;
+                                            }
+
+                                            table div {
+                                                white-space: nowrap;
+                                                margin: 3px 10px;
+                                                padding: 2px 0.2em;
+                                                border-style: solid;
+                                                border-width: 2px;
+                                                border-radius: 5px;
+                                                font-size: 0.9em;
+                                                font-weight: normal;
+                                            }
+
+                                            .round1 tbody div.hit {
+                                                border-color: #008000;
+                                                background-color: #008000;
+                                                color: white;
+                                            }
+
+                                            .round2 tbody div.hit {
+                                                border-color: #0000cd;
+                                                background-color: #0000cd;
+                                                color: white;
+                                            }
+
+                                            .round3 tbody div.hit {
+                                                border-color: #4b0082;
+                                                background-color: #4b0082;
+                                                color: white;
+                                            }
+
+                                            .daihyo tbody div.hit {
+                                                border-color: #c71585;
+                                                background-color: #c71585;
+                                                color: white;
+                                            }
+
+                                            .sansakuscout tbody div.hit {
+                                                border-color: #8b0000;
+                                                background-color: #8b0000;
+                                                color: white;
+                                            }
+
+                                            #resultTable tbody div.hit p,
+                                            #resultTable tbody div.other p {
+                                                display: block;
+                                                margin: 0;
+                                                padding: 0;
+                                                width: 100%;
+                                                border: none;
+                                                text-align: center;
+                                            }
+
+                                            #resultTable tbody div.hit p:nth-of-type(2),
+                                            #resultTable tbody div.other p:nth-of-type(2) {
+                                                font-size: 0.7em;
+                                            }
+
+                                            tbody div.other {
+                                                background-color: white;
+                                            }
+
+                                            /* 特殊能力 */
+                                            #resultTable span {
+                                                display: inline-block;
+                                                border-radius: 1em;
+                                                margin: 0.5em;
+                                                padding: 3px 0.8em;
+                                                font-size: 0.7em;
+                                            }
+
+                                            span.po {
+                                                background-color: #f8f8ff;
+                                                border: solid 1px #696969;
+                                                color: #696969;
+                                            }
+
+                                            span.ki {
+                                                background-color: #cfffed;
+                                                border: solid 1px #197663;
+                                                color: #197663;
+                                            }
+
+                                            span.su {
+                                                background-color: #f7ffef;
+                                                border: solid 1px #006633;
+                                                color: #006633;
+                                            }
+
+                                            span.he {
+                                                background-color: #ffffdb;
+                                                border: solid 1px #725c2e;
+                                                color: #725c2e;
+                                            }
+
+                                            span.bl {
+
+                                                background-color: #d0f5fd;
+                                                border: solid 1px #1060b9;
+                                                color: #1060b9;
+                                            }
+
+                                            span.go {
+                                                background-color: #fae3af;
+                                                border: solid 1px #8b550b;
+                                                color: #8b550b;
+                                            }
+
+                                            span.do {
+                                                background: linear-gradient(to right, #d0f5fd 50%, #ffeff7 50%);
+                                                border: solid 1px #999;
+                                                color: #333;
+                                            }
+
+                                            span.re,
+                                            span.de {
+                                                background-color: #ffeff7;
+                                                border: solid 1px #ff3d3d;
+                                                color: #ff3d3d;
+                                            }
+                                        </style>
+
+
+                                        <div id="tab">
+                                            <p class="round1"><label><input name="match" type="radio" value="round1"
+                                                        checked="">1回戦</label></p>
+                                            <p class="round2"><label><input name="match" type="radio"
+                                                        value="round2">2回戦</label></p>
+                                            <p class="round3"><label><input name="match" type="radio"
+                                                        value="round3">3回戦</label></p>
+                                            <p class="daihyo"><label><input name="match" type="radio"
+                                                        value="daihyo">代表決</label></p>
+                                            <p class="sansakuscout"><label><input name="match" type="radio"
+                                                        value="sansakuscout">ほか</label></p>
+                                            <section id="teamList">
+                                                <div id="teamsCell"></div>
+                                                <table id="resultTable">
+                                                </table>
+                                            </section>
+                                        </div>
+                                    </section>
+                                    <script
+                                        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                    <script>
+                                        $(function () {
+                                            const url = 'https://bocchi-gamer.com/pawafes2020-';
+                                            const teams = [
+                                                //{team: '', value: '', match: ['round1', 'round2', 'round3', 'daihyo', 'sansakuscout'], players: ['']},
+                                                //{team: '', value: '', match: ['sansakuscout'], players: ['']},
+                                                //あ
+                                                { team: 'あかつき大附属高校OBチーム', value: 'akatukiob', tournament: ['ptv', 'inf'], match: ['round3'], players: ['一ノ瀬塔哉', '二宮瑞穂', '三本松一', '四条賢二', '五十嵐権三', '六本木優希', '七井アレフト', '八嶋中', '九十九宇宙'] },
+                                                { team: 'あかつき大附属高校(PTV)', value: 'akatukifuzoku', tournament: ['ptv'], match: ['round1', 'round2', 'round3', 'daihyo'], players: ['猪狩守', 'アフロ猪狩', '猪狩進', '四条澄香'] },
+                                                { team: 'アスレテース高校', value: 'athletes', tournament: ['ptv'], match: ['round3'], players: ['塚見巴', '塚見リフター', 'カイル・モラレス', 'ミンミン', '戸内聖華'] },
+                                                { team: 'アナザーチャレンジャーズ', value: 'another', tournament: ['ptv', 'inf'], match: ['round3'], players: ['ニセプロ', '矢倍萌雄', '紺野美崎'] },
+                                                { team: 'アマゾネス', value: 'amazones', tournament: ['ptv', 'inf'], match: ['round1'], players: ['新島早紀', '佐菜あゆみ', '十六夜瑠菜'] },
+                                                { team: 'アンドロメダ学園高校(PTV)', value: 'andromeda', tournament: ['ptv'], match: ['daihyo'], players: ['大西=ハリソン=筋金', '神高龍', '嵐丸士朗', 'ガジェット落合', 'ジャベリン五十嵐', '加藤京子'] },
+                                                { team: '壱琉大学(INF)', value: 'ichiryu', tournament: ['inf'], match: ['round3'], players: ['雷轟遥登', '風薙豹', '暮羽鋭次'] },
+                                                { team: 'イレブン工科大学(INF)', value: 'eleven', tournament: ['inf'], match: ['round1', 'round2', 'round3', 'daihyo'], players: ['橘みずき', '仲居三太', '軽井沢大輝', '石野まさ夫', '波佐見駿一', '紙山要'] },
+                                                { team: 'ヴァンプ高校', value: 'vamp', tournament: ['ptv'], match: ['round2'], players: ['灰塚朔夜', '内藤明瑠', '史門泰司', '神良美砂'] },
+                                                { team: 'エジプト大学', value: 'egypt', tournament: ['ptv', 'inf'], match: ['round2'], players: ['ホールスアン4世', 'ニャプテト', 'ヌウビス', 'セティーヌ', 'ラミィ'] },
+                                                { team: 'SG高校', value: 'sgkoukou', tournament: ['ptv'], match: ['round1'], players: ['桜ノ宮総司', '伊貫大和', '森河岳', '氷上聡里'] },
+                                                { team: '恵比留高校', value: 'evil', tournament: ['ptv'], match: ['daihyo'], players: ['闇野栄剛', '往田真威人', '霧崎礼里'] },
+                                                { team: '円卓高校(INF)', value: 'entaku', tournament: ['inf'], match: ['daihyo'], players: ['阿麻央真', 'ランスロット', '望戸紅', '岸田卓', '久根美亜'] },
+                                                { team: '大江戸カーニバルズ(INF)', value: 'oedo', tournament: ['inf'], match: ['round1'], players: ['江戸川文楽', 'ガルシア=世良'] },
+                                                { team: '大筒高校(INF)', value: 'oozutu', tournament: ['inf'], match: ['round1'], players: ['冴木創'] },
+                                                { team: 'オール海東学院(INF)', value: 'allkaitou', tournament: ['ptv', 'inf'], match: ['round3'], players: ['樽本有太', '鈴姫健太郎', '渋谷秀喜'] },
+
+
+                                                //か
+                                                { team: 'ガールズチャレンジャーズ(INF)', value: 'girlschallengers', tournament: ['inf'], match: ['round1'], players: ['柳生鞘花', '夢城優花', '夢城和花', '浪風芽衣香', '泊方明日音', '片桐恋'] },
+                                                { team: '神楽坂グループ(INF)', value: 'kagurazaka', tournament: ['inf'], match: ['round3'], players: ['神楽坂光彦', '六道聖', '日和ミヨ'] },
+                                                { team: '河川敷ミラクルズ', value: 'kasenjiki', tournament: ['ptv', 'inf'], match: ['round2'], players: ['海野幸子', '水狐光世', '輝星也'] },
+                                                { team: '頑張パワフルズ(PTV)', value: 'powerfuls', tournament: ['ptv', 'inf'], match: ['round2'], players: ['福家花男', '東条小次郎', '館西勉'] },
+                                                { team: 'ギガバイツ3.0', value: 'gigabites', tournament: ['ptv'], match: ['round3'], players: ['出井田大輔', '雲海和也', '東推八'] },
+                                                { team: 'くろがね商業高校(INF)', value: 'kurogane', tournament: ['inf'], match: ['round2'], players: ['大鐘餅太郎', '銭形乱蔵', '宝塚月斗', '祝井幸吉'] },
+                                                { team: '黒獅子重工(INF)', value: 'kurojisi', tournament: ['inf'], match: ['daihyo'], players: ['社長', '部長'] },
+                                                { team: '激闘第一高校', value: 'gekitou', tournament: ['ptv', 'inf'], match: ['round1'], players: ['鶴屋勝', '少豪月剛', '大塔俊二'] },
+                                                { team: 'ゴージャス・ブラックジャックス', value: 'gorgeous', tournament: ['ptv', 'inf'], match: ['round3'], players: ['ヴィクター', 'ロディ', 'アレックス'] },
+                                                { team: '極亜久商業高校(PTV)', value: 'gokuakushougyou', tournament: ['ptv'], match: ['round1'], players: ['外藤侠二', '善斗薫'] },
+                                                { team: '極亜久やんきーズ', value: 'yankees', tournament: ['ptv', 'inf'], match: ['round2'], players: ['番堂長児', '半田小鉄', '阿畑やすし', '鷹野有紀'] },
+                                                { team: '古代大学', value: 'kodai', tournament: ['ptv'], match: ['round2'], players: ['掘杉等', '雪野楓', '斬金半馬', '井関丹作'] },
+
+                                                //さ
+                                                { team: '西強大学(PTV)', value: 'saikyo', tournament: ['ptv'], match: ['daihyo'], players: ['滝本太郎', '久方怜', '城山剣一', '清本和重', '堺住吉'] },
+                                                { team: '四神黄竜高校(INF)', value: 'sijinkouryu', tournament: ['inf'], match: ['round3'], players: ['朱雀南赤'] },
+                                                { team: 'シャイニングバスターズ', value: 'shining', tournament: ['ptv'], match: ['daihyo'], players: ['鈴本大輔'] },
+                                                { team: '瞬鋭高校', value: 'shunei', tournament: ['ptv', 'inf'], match: ['round3'], players: ['烏丸剛充', '才賀侑人', '小平陽向'] },
+                                                { team: '支良州水産高校(PTV)', value: 'sirasusuisann', tournament: ['ptv'], match: ['round2'], players: ['真黒綱寛', '須々木清吾', '赤原勘八', '倉家凪'] },
+                                                { team: '白薔薇かしまし学園大学', value: 'sirobarakasimasi', tournament: ['ptv', 'inf'], match: ['round2'], players: ['涼風希望', '星空星光', '黒珠真', '矢部田亜希子', '夏野向日葵'] },
+                                                { team: '神帝学園高校', value: 'jintei', tournament: ['ptv', 'inf'], match: ['round3'], players: ['グラビトン新井'] },
+                                                { team: 'するめ大学(PTV)', value: 'surume', tournament: ['ptv'], match: ['round2'], players: ['田中まさる', '鮫島粂太郎', '乙女', '九州', '猿', 'ザンス', '球三郎', '村雨', '天王寺'] },
+                                                { team: '戦国高校', value: 'sengoku', tournament: ['ptv', 'inf'], match: ['round2'], players: ['ゼンザイ', '浮見葉勘', '郡司知将', '千代姫'] },
+                                                { team: '聖ジャスミン学園高校', value: 'stjasmine', tournament: ['ptv', 'inf'], match: ['round1'], players: ['太刀川広巳', '小鷹美麗', '美藤千尋', '大空美代子', '川星ほむら'] },
+
+                                                //た
+                                                { team: '太平楽高校', value: 'taiheiraku', tournament: ['ptv'], match: ['round1'], players: ['浦賀有也', '天城隼', '諸井清和', '鴨川しぐれ'] },
+                                                { team: '大漁水産高校', value: 'tairyousuisann', tournament: ['ptv', 'inf'], match: ['round1'], players: ['松崎トミオ'] },
+                                                { team: '球八高校', value: 'tamahachi', tournament: ['ptv', 'inf'], match: ['round1'], players: ['手塚隆文', '円谷一義', '猿山武'] },
+                                                { team: 'ダン＆ジョン高校', value: 'danandjohn', tournament: ['ptv', 'inf'], match: ['round1'], players: ['須藤零人', 'バット＝円島', '兼倉洋平'] },
+                                                { team: 'たんぽぽ製作所', value: 'tanpopo', tournament: ['ptv', 'inf'], match: ['round1'], players: ['嶋田栄作', '反町三次', '柴田軍平', '嵐山美鈴'] },
+                                                { team: '津々家バルカンズ', value: 'vulcans', tournament: ['ptv', 'inf'], match: ['round2'], players: ['勇村武士', '上野良人', 'フル=ハート'] },
+                                                { team: '帝王実業高校', value: 'teiou', tournament: ['ptv', 'inf'], match: ['round1', 'round2', 'round3', 'daihyo'], players: ['友沢亮', '久遠ヒカル', '猛田慶次', '蛇島桐人', '犬河和音', '猫神優'] },
+                                                { team: '天空中央高校(INF)', value: 'tenkuuchuo', tournament: ['inf'], match: ['daihyo'], players: ['虹谷誠', '神成尊', '東雲翔也', '虹谷彩理'] },
+                                                { team: 'ときめき青春高校', value: 'tokimekiseishun', tournament: ['ptv', 'inf'], match: ['round2'], players: ['青葉春人', '小山雅', '西郷十三', '茶来元気', '鬼力剛', '神宮寺光', '稲田吾作', '三森右京', '三森左京'] },
+                                                { team: 'どすこい酒造', value: 'dosukoi', tournament: ['ptv', 'inf'], match: ['round1'], players: ['田村', '尾崎竜介'] },
+                                                { team: 'ドラフ島連合(INF)', value: 'draftou', tournament: ['inf'], match: ['round3'], players: ['パピヨン', 'ミッキー', 'DJB-78', '永瀬大河'] },
+                                                { team: 'ドリル電器', value: 'drilldenki', tournament: ['ptv', 'inf'], match: ['round1'], players: ['松倉宗光', '香本富久雄'] },
+                                                { team: 'ドリルモグラーズ(INF)', value: 'moguras', tournament: ['inf'], match: ['round1'], players: ['凡田大介', '倉刈仁志', '水木卓'] },
+
+                                                //な
+                                                //{team: '', value: '', match: ['round1', 'round2', 'round3', 'daihyo', 'sansakuscout'], players: ['']},
+                                                //は
+                                                { team: '灰凶高校(INF)', value: 'haikyo', tournament: ['inf'], match: ['round2'], players: ['ゴウ', '井筒哀樹', '御宝金太郎', '怒拳礼次', '楽垣吾助', '須神絵久'] },
+                                                { team: 'バス停前高校(PTV)', value: 'basuteimae', tournament: ['ptv'], match: ['round1'], players: ['田中山太郎'] },
+                                                { team: '覇堂高校(PTV)', value: 'hadou', tournament: ['ptv'], match: ['round3'], players: ['木場嵐士', '金原いずる', '水鳥忍', '木場静火'] },
+                                                { team: '花ざかり高校', value: 'hanazakari', tournament: ['ptv', 'inf'], match: ['round1'], players: ['桜沢樹', '水無月要'] },
+                                                { team: '花丸高校(PTV)', value: 'hanamaru', tournament: ['ptv'], match: ['round3'], players: ['レッド', '東優'] },
+                                                { team: 'パワフォー大学', value: 'pawafo', tournament: ['ptv', 'inf'], match: ['round1'], players: ['片倉昌行', '丸餅太', '甲斐進撃', '三ツ沢環'] },
+                                                { team: 'パワフル高校(PTV)', value: 'powerfulkoukou', tournament: ['ptv'], match: ['round1'], players: ['星井スバル', '宇渡幹久', '小田切巧'] },
+                                                { team: '白轟高校', value: 'byakugou', tournament: ['ptv', 'inf'], match: ['round2'], players: ['北斗八雲'] },
+                                                { team: '仏契大学(INF)', value: 'bucchigiri', tournament: ['ptv', 'inf'], match: ['round2'], players: ['大豪月', '非道', '黒沢愛'] },
+                                                { team: 'フリート高校(INF)', value: 'fleet', tournament: ['inf'], match: ['round2'], players: ['館橋水奈都', '沖野海里', '梶増人', 'オクタヴィア', '泡瀬満里南'] },
+                                                { team: 'ブレインマッスル高校', value: 'brainmuscle', tournament: ['ptv', 'inf'], match: ['round2'], players: ['一条一輝', '尾根瑛人', '納見新造'] },
+                                                { team: '文武高校(PTV)', value: 'bunbu', tournament: ['ptv'], match: ['round2'], players: ['武秀英', '鎌刈善二', '古長衛士'] },
+                                                { team: '北雪高校(INF)', value: 'hokusetu', tournament: ['inf'], match: ['round1'], players: ['美園千花', '小嵐リョウ', '八尺巫女子', '明星雪華'] },
+
+                                                //ま
+                                                { team: 'マントル辺境高校', value: 'mantle', tournament: ['ptv', 'inf'], match: ['round3'], players: ['堂江竜河', '黒衛隆富', '伍歩倫人'] },
+                                                { team: 'ミゾットスポーツ(PTV)', value: 'mizotto', tournament: ['ptv', 'inf'], match: ['round3'], players: ['山口賢', 'ブロンコ・リー', '城井伯斎', '紀乃光一', '武野浩太'] },
+                                                { team: 'みわちゃん with DB', value: 'miwachan', tournament: ['ptv', 'inf'], match: ['round1'], players: ['実和男', '灰谷充', '純決太郎'] },
+                                                { team: '鳴響高校(INF)', value: 'meikyou', tournament: ['inf'], match: ['round1'], players: ['志藤玲美', '大越清亮', '伊能麗示'] },
+                                                { team: 'メカニクス産業高校(PTV)', value: 'mecanics', tournament: ['ptv'], match: ['round1'], players: ['千賀篤志', '魁竜司', '江暦輝', 'NCM-753'] },
+                                                { team: 'メガビット千秋楽および海月佐和蟹連合(INF)', value: 'megabit', tournament: ['inf'], match: ['round2'], players: ['覆水武明', '出井田文飛', '鞍馬貴史', '大一万大吉', '咲須かのん'] },
+
+                                                //や
+                                                //{team: '', value: '', match: ['round1', 'round2', 'round3', 'daihyo', 'sansakuscout'], players: ['']},
+
+                                                //ら
+                                                { team: 'ラグナロク分校(PTV)', value: 'ragnarok', tournament: ['ptv'], match: ['round1'], players: ['火野勇太郎', '水野魔太郎', '草野剣太郎', '鋼毅', '矢部門竜雄'] },
+                                                { team: 'レッドエンジェルス(INF)', value: 'redengels', tournament: ['inf'], match: ['daihyo'], players: ['神童裕二郎', 'バンガード', 'マイルマン'] },
+                                                { team: '恋恋高校(INF)', value: 'renren', tournament: ['inf'], match: ['round1'], players: ['早川あおい', '七瀬はるか'] },
+                                                { team: '六面大学', value: 'rokumen', tournament: ['ptv', 'inf'], match: ['round2'], players: ['蝶野半四郎', '六鹿陸', '辰猪一八'] },
+
+                                                //わ
+                                                { team: 'ワールド高校(INF)', value: 'world', tournament: ['inf'], match: ['round3'], players: ['マキシマム', 'ヤーベン', 'アルヴィン', 'ナヌーク', 'ギャネンドラ', 'エミリ'] },
+                                                { team: '我間財団U-22', value: 'wagamazaidan', tournament: ['ptv', 'inf'], match: ['round3'], players: ['明神陽', '軍導英雄', '中之島幸宏', '我間摩夕'] },
+
+                                                //その他
+                                                { team: '散策', value: 'sansaku', tournament: ['ptv', 'inf'], match: ['sansakuscout'], players: ['ジュリアス', '戸井鉄男', '佐賀巌', '獅乃木琢磨', '鳴海悠斗', '皇帝', '天音姫恋', '栗原舞', '芹沢茜', '黒戸もね', '姫野カレン'] },
+                                                { team: 'スカウト', value: 'scout', tournament: ['ptv', 'inf'], match: ['sansakuscout'], players: ['駒坂瞬', '有村佐治', '藤堂まひる', 'アンヌ', '本場あんこ', '菊度アイラ'] },
+                                                { team: 'パワフェスチャレンジャーズ', value: 'pawafesclgs', tournament: ['ptv', 'inf'], match: ['pawafesclgs'], players: ['クロン'] },
+                                            ];
+                                            const combo = [//2combo
+                                                { ptn: '渋谷秀喜×才賀侑人', skillList: ['po筋力60', 'po技術40', 'po精神20', 'go恐怖の満塁男Lv1', 'bl満塁男Lv1', 'go闘魂Lv1', 'bl闘志Lv1', 'bl広角打法Lv2', 'bl球速安定Lv1'] },
+                                                { ptn: '神良美砂×大空美代子', skillList: ['po筋力40', 'po技術20', 'po精神10', 'kiパワーLv2', 'bl重い球Lv2', 'blハイボールヒッターLv2'] },
+                                                { ptn: '宇渡幹久×大越清亮', skillList: ['po筋力40', 'po技術20', 'po精神20', 'go伝説のサヨナラ男Lv1', 'blサヨナラ男Lv1', 'blクロスファイヤーLv2', 'blマルチ弾Lv2', 'do全開Lv4'] },
+                                                { ptn: '矢部門竜雄×闇野栄剛', skillList: ['po筋力45', 'po技術15', 'po精神5', 'blマルチ弾Lv1', 'heスライダーLv2', 'he(第2球種)スライダーLv1', 'blリベンジLv1', 'bl奪三振Lv1'] },
+                                                { ptn: '井筒哀樹×凡田大介', skillList: ['po筋力25', 'po技術30', 'bl固め打ちLv1', 'he超スローボールLv1', 'blヘッドスライディングLv3', 'bl根性〇Lv4', 'reシュート回転', 'deシュート回転消すLv4'] },
+                                                { ptn: '往田真威人×九州', skillList: ['po筋力45', 'po技術40', 'goエースキラーLv1', 'bl対エース〇Lv1', 'ki肩力Lv1', 'bl闘志Lv1', 'suサブポジ捕手Lv4'] },
+                                                { ptn: '加藤京子×東優', skillList: ['po筋力30', 'po敏捷30', 'po技術10', 'goドクターK Lv1', 'bl奪三振Lv1', 'blチャンスメーカーLv2', 'bl緊急登板〇Lv2', 're負け運', 'de負け運消すLv4'] },
+                                                { ptn: '一条一輝×新島早紀', skillList: ['po筋力45', 'po技術25', 'go大番狂わせLv1', 'bl意外性Lv1', 'kiパワーLv1', 'do荒れ球Lv2'] },
+                                                { ptn: '雷轟遥登×美藤千尋', skillList: ['po筋力40', 'po技術30', 'po精神15', 'blローボールヒッターLv3', 'do荒れ球Lv3', 'bl窮地〇Lv2', 'bl低め〇Lv2'] },
+                                                { ptn: '小平陽向×半田小鉄', skillList: ['po筋力30', 'po敏捷30', 'po技術15', 'goバズーカ送球Lv1', 'bl重い球Lv1', 'bl粘り打ちLv1', 'blノビLv1'] },
+                                                { ptn: '木場静火×ナヌーク', skillList: ['po筋力20', 'po敏捷20', 'po技術30', 'bl対ストレート〇Lv4', 'do全開Lv1', 'bl意外性Lv3', 'heムービングファストLv1'] },
+                                                { ptn: '須神絵久×猿', skillList: ['po筋力20', 'po敏捷30', 'po技術20', 'bl送球Lv2', 'blノビLv2', 'ki走力Lv1'] },
+                                                { ptn: '城山剣一×ニャプテト', skillList: ['po筋力30', 'po敏捷30', 'po変化球20', 'go電光石火Lv1', 'bl盗塁Lv1', 'bl逆境〇Lv3', 'bl対ランナー〇Lv3', 'suサブポジ遊撃Lv1'] },
+                                                { ptn: '阿麻央真×伊能麗示', skillList: ['po筋力30', 'po技術20', 'go変幻自在Lv1', 'bl緩急〇Lv1', 'heHスライダーLv2', 'he(第2球種)HスライダーLv1', 'bl対エース〇Lv1', 'blキレ〇Lv1'] },
+                                                { ptn: '水野魔太郎×雪野楓', skillList: ['po敏捷10', 'po技術10', 'po変化球45', 'po精神10', 'go魔術師Lv1', 'bl守備職人Lv1', 'blレーザービームLv3', 'bl尻上がりLv3'] },
+                                                { ptn: '社長×大豪月', skillList: ['po筋力40', 'po変化球20', 'po精神20', 'kiパワーLv3', 'ki球速Lv3'] },
+                                                { ptn: '四条澄香×蛇島桐人', skillList: ['po敏捷20', 'po技術30', 'po精神20', 'do悪球打ちLv4', 'bl重い球Lv1', 'blホーム死守Lv3', 'bl内角攻めLv1'] },
+                                                { ptn: '我間摩夕×蛇島桐人', skillList: ['po敏捷40', 'po技術40', 'goヒートアップLv1', 'bl窮地〇Lv1', 'blプレッシャーランLv1', 'blキレ〇Lv4'] },
+                                                { ptn: '田中まさる×水鳥忍', skillList: ['po技術55', 'po精神15', 'go終盤力Lv1', 'bl尻上がりLv1', 'blサヨナラ男Lv2', 'bl緩急〇Lv3', 're短気', 'de短期消すLv4'] },
+                                                { ptn: '実和男×片桐恋', skillList: ['po筋力35', 'po技術20', 'po精神15', 'bl固め打ちLv3', 'bl重い球Lv3', 'suサブポジ一塁Lv2'] },
+                                                { ptn: '泊方明日音×咲須かのん', skillList: ['po筋力15', 'po技術25', 'po変化球30', 'blムード〇Lv1', 'heスローカーブLv1', 'bl走塁Lv1'] },
+                                                { ptn: '黒戸もね×森河岳', skillList: ['po敏捷40', 'po技術30', 'ki走力Lv2', 'blアベレージヒッターLv1', 'bl打球反応〇Lv1'] },
+                                                { ptn: '犬河和音×善斗薫', skillList: ['po技術30', 'po精神20', 'heHシュートLv1', 'bl打たれ強さLv1', 'do悪球打ちLv1', 'bl対強打者〇Lv1'] },
+                                                { ptn: '東条小次郎×嵐山美鈴', skillList: ['po筋力30', 'po敏捷20', 'po精神20', 'bl対ストレート〇Lv2', 'blクイックLv1', 'blカット打ちLv1', 'bl立ち上がり〇Lv1'] },
+                                                { ptn: '暮羽鋭次×倉刈仁志', skillList: ['po筋力25', 'po敏捷30', 'po技術25', 'goガソリンタンクLv1', 'bl回復Lv1', 'bl意外性Lv1', 'bl要所〇Lv4'] },
+                                                { ptn: '黒珠真×兼倉洋平', skillList: ['po筋力30', 'po敏捷20', 'po技術20', 'blチャンスLv2', 'bl球持ち〇Lv2', 'bl固め打ちLv1', 'blクイックLv1'] },
+                                                { ptn: '部長×紺野美崎', skillList: ['po筋力20', 'po技術20', 'heスライダーLv3', 'he(第2球種)スライダーLv2', 'blアベレージヒッターLv3', 'bl回復Lv3', 'doフライボールピッチャーLv2'] },
+                                                { ptn: '駒坂瞬×尾崎竜介', skillList: ['po筋力10', 'po敏捷40', 'po技術50', 'po精神20', 'go広角砲Lv1', 'bl広角打法Lv1', 'ki捕球Lv3', 'bl回またぎ〇Lv1', 'ki守備力Lv2', 'blリリース〇Lv2'] },
+                                                { ptn: '猿山武×風薙豹', skillList: ['po筋力30', 'po敏捷15', 'po技術20', 'po精神10', 'go代打の神様Lv1', 'bl代打〇Lv1', 'blアベレージヒッターLv1', 'bl対ピンチLv1'] },
+                                                { ptn: 'ガジェット落合×井関丹作', skillList: ['po筋力30', 'po敏捷20', 'po技術30', 'po精神10', 'ki弾道Lv4', 'blハイボールヒッターLv4', 'bl立ち上がり〇Lv2', 'do悪球打ちLv3'] },
+                                                { ptn: '伊貫大和×久根美亜', skillList: ['po筋力20', 'po技術20', 'po変化球20', 'po精神10', 'blレーザービームLv2', 'bl牽制〇Lv1', 'blかく乱Lv1', 'bl球持ち〇Lv1'] },
+                                                { ptn: '六鹿陸×永瀬大河', skillList: ['po敏捷25', 'po技術25', 'po精神25', 'bl勝ち運Lv2', 'ki守備力Lv3', 'blインコースヒッターLv1', 'suサブポジ捕手Lv1'] },
+                                                { ptn: '浮見葉勘×沖野海里', skillList: ['po筋力40', 'po技術40', 'blチャンスメーカーLv3', 'doフライボールピッチャーLv3', 'ki肩力Lv3', 'bl立ち上がり〇Lv3'] },
+                                                { ptn: '木場嵐士×郡司知将', skillList: ['po筋力50', 'po技術20', 'po精神10', 'goトップギアLv1', 'bl立ち上がり〇Lv1', 'blラインドライブLv4', 'do荒れ球Lv1'] },
+                                                { ptn: '田中山太郎×泡瀬満里南', skillList: ['po敏捷20', 'po技術20', 'po精神30', 'ki守備力Lv1', 'bl要所〇Lv2', 'blバント〇Lv2'] },
+                                                { ptn: 'ゴウ×茶来元気', skillList: ['po筋力40', 'po敏捷15', 'po技術15', 'po変化球20', 'go切り込み隊長Lv1', 'blチャンスメーカーLv1', 'blプルヒッターLv2', 'bl奪三振Lv2', 'heパワーカーブLv4', 'he(第2球種)パワーカーブLv3', 'reムード×', 'deムード×消すLv4'] },
+                                                { ptn: '明神陽×松崎トミオ', skillList: ['po筋力10', 'po技術10', 'po変化球40', 'po精神10', 'ki球速Lv2', 'bl初球〇Lv1', 'blパワーヒッターLv1', 'blジャイロボールLv1'] },
+                                                { ptn: '反町三次×芹沢茜', skillList: ['po敏捷30', 'po技術20', 'po精神20', 'bl送球Lv1', 'blジャイロボールLv1', 'bl広角打法Lv1', 'bl打球反応〇Lv1'] },
+                                                { ptn: '神高龍×矢部田亜希子', skillList: ['po筋力30', 'po敏捷25', 'po技術10', 'po変化球30', 'goトリックスターLv1', 'blかく乱Lv1', 'bl盗塁Lv3', 'blクイックLv4', 'blナチュラルシュートLv2'] },
+                                                { ptn: '冴木創×岸田卓', skillList: ['po筋力20', 'po敏捷35', 'po技術40', 'go精神的支柱Lv1', 'blムード〇Lv1', 'bl守備職人Lv3', 'bl闘志Lv3', 'suサブポジ二塁Lv1', 're併殺', 'de併殺消すLv4'] },
+                                                { ptn: 'フル=ハート×柴田軍平', skillList: ['po筋力35', 'po技術35', 'bl決勝打Lv2', 'blジャイロボールLv3', 'bl逆境〇Lv2', 'bl対左打者Lv3'] },
+                                                { ptn: 'アレックス×柳生鞘花', skillList: ['po筋力60', 'po敏捷10', 'po技術15', 'blラインドライブLv3', 'blナチュラルシュートLv3', 'blムード〇Lv2', 'bl打球反応〇Lv2'] },
+                                                { ptn: 'DJB-78×七瀬はるか', skillList: ['po技術20', 'po変化球40', 'po精神10', 'blラインドライブLv1', 'heフォークLv1', 'blレーザービームLv1', 'doポーカーフェイスLv1'] },
+                                                { ptn: '倉家凪×非道', skillList: ['po技術40', 'po精神30', 'blプレッシャーランLv2', 'blリリース〇Lv4', 'suサブポジ捕手Lv1'] },
+                                                { ptn: '志藤玲美×ガルシア=世良', skillList: ['po筋力30', 'po敏捷20', 'po技術30', 'go高速レーザーLv1', 'blレーザービームLv1', 'bl意外性Lv4', 'blクロスファイヤーLv4'] },
+                                                { ptn: '火野勇太郎×祝井幸吉', skillList: ['po敏捷20', 'po技術35', 'po精神15', 'blカット打ちLv3', 'bl勝ち運Lv1', 'blチャンスメーカーLv1', 'blナチュラルシュートLv1'] },
+                                                { ptn: '武野浩太×青葉春人', skillList: ['po筋力30', 'po敏捷15', 'po変化球30', 'blラインドライブLv2', 'bl固め打ちLv3', 'bl対強打者〇Lv4'] },
+                                                { ptn: '三森左京×七井アレフト', skillList: ['po筋力25', 'po敏捷30', 'po技術15', 'po精神10', 'go左腕キラーLv1', 'bl対左投手Lv1', 'bl対ピンチLv2', 'bl対左打者Lv2'] },
+                                                { ptn: '紀乃光一×鬼力剛', skillList: ['po筋力30', 'po技術15', 'po変化球15', 'po精神10', 'goアーチストLv1', 'blパワーヒッターLv1', 'bl粘り打ちLv4', 'bl低め〇Lv1'] },
+                                                { ptn: '千賀篤志×猛田慶次', skillList: ['po筋力20', 'po敏捷10', 'po技術10', 'po精神35', 'goヒートアップLv1', 'bl窮地〇Lv1', 'blサヨナラ男Lv4', 'bl根性〇Lv4'] },
+                                                { ptn: '鴨川しぐれ×エミリ', skillList: ['po筋力20', 'po変化球30', 'po精神30', 'blローボールヒッターLv4', 'bl真っスラLv4', 'ki守備力Lv1'] },
+                                                { ptn: '魁竜司×藤堂まひる', skillList: ['po敏捷40', 'po技術40', 'po精神40', 'go切り込み隊長Lv1', 'blチャンスメーカーLv1', 'goディレイドアームLv1', 'bl球持ち〇Lv1', 'bl意外性Lv2', 'bl牽制〇Lv3'] },
+                                                { ptn: '諸井清和×ヌウビス', skillList: ['po筋力40', 'po技術20', 'po精神10', 'go火事場の馬鹿力Lv1', 'bl逆境〇Lv1', 'blケガしにくさLv3', 'blノビLv1'] },
+                                                { ptn: 'ヤーベン×仲居三太', skillList: ['po筋力20', 'po敏捷30', 'po技術20', 'bl決勝打Lv3', 'bl要所〇Lv3', 'blサヨナラ男Lv1', 'suサブポジ二塁Lv1'] },
+                                                { ptn: 'バット＝円島×片倉昌行', skillList: ['po筋力20', 'po敏捷30', 'po技術20', 'po精神10', 'ki捕球Lv2', 'blダメ押しLv2', 'bl牽制〇Lv2', 'blアウトコースヒッターLv2'] },
+                                                { ptn: '十六夜瑠菜×神楽坂光彦', skillList: ['po敏捷20', 'po技術40', 'go超投打躍動Lv1', 'bl投打躍動Lv1', 'bl満塁男Lv2', 'bl内角攻めLv2', 'blジャイロボールLv2', 're軽い球', 'de軽い球消すLv4'] },
+                                                { ptn: '甲斐進撃×神童裕二郎', skillList: ['po筋力20', 'po敏捷10', 'po技術20', 'po精神10', 'go左キラーLv1', 'bl対左打者Lv1', 'bl流し打ちLv1', 'doフライボールピッチャーLv2'] },
+                                                { ptn: '波佐見駿一×蝶野半四郎', skillList: ['po筋力20', 'po敏捷20', 'po技術30', 'goクロスキャノンLv1', 'blクロスファイヤーLv1', 'blチャンスメーカーLv4', 'doゴロピッチャーLv4', 'heナックルカーブLv1', 're四球', 'de四球消すLv4'] },
+                                                { ptn: '神成尊×ジャベリン五十嵐', skillList: ['po筋力10', 'po敏捷50', 'po技術40', 'goストライク送球Lv1', 'bl送球Lv1', 'go内角無双Lv1', 'bl内角攻めLv1', 'blマルチ弾Lv3', 'blクイックLv3', 'ki捕球Lv1'] },
+                                                { ptn: '氷上聡里×虹谷誠', skillList: ['po敏捷15', 'po技術20', 'go強心臓Lv1', 'bl対ピンチLv1', 'bl広角打法Lv3', 'doポーカーフェイスLv3'] },
+                                                { ptn: '少豪月剛×大西=ハリソン=筋金', skillList: ['po筋力30', 'po精神15', 'goハイスピンジャイロLv1', 'blジャイロボールLv1', 'kiスタミナLv1', 'bl対エース〇Lv1', 'blクロスファイヤーLv1'] },
+                                                { ptn: '出井田文飛×ゼンザイ', skillList: ['po技術40', 'po精神20', 'go精神的支柱Lv1', 'blムード〇Lv1', 'heVスライダーLv1', 'bl広角打法Lv1', 'bl対ピンチLv1'] },
+                                                { ptn: 'ギャネンドラ×覆水武明', skillList: ['po敏捷20', 'po技術20', 'po精神15', 'bl高速チャージLv3', 'doポーカーフェイスLv2', 'blヘッドスライディングLv2', 'heシュートLv4', 'he(第2球種)シュートLv3'] },
+                                                { ptn: '栗原舞×二宮瑞穂', skillList: ['po筋力10', 'po敏捷20', 'po技術30', 'po精神10', 'go内角必打Lv1', 'blインコースヒッターLv1', 'blキャッチャーLv2', 'bl要所〇Lv1'] },
+                                                { ptn: '神宮寺光×樽本有太', skillList: ['po筋力30', 'po技術30', 'bl満塁男Lv3', 'bl尻上がりLv2', 'blマルチ弾Lv1', 'bl球持ち〇Lv4'] },
+                                                { ptn: '怒拳礼次×館橋水奈都', skillList: ['po筋力30', 'po敏捷20', 'po技術20', 'po精神20', 'go低球必打Lv1', 'blローボールヒッターLv1', 'blチャンスLv4', 'bl逃げ球Lv3', 'blヘッドスライディングLv1', 're寸前', 'de寸前×消すLv4'] },
+                                                { ptn: '三ツ沢環×草野剣太郎', skillList: ['po筋力40', 'po技術20', 'po精神10', 'blホーム突入Lv3', 'heドロップLv1', 'suサブポジ三塁Lv1'] },
+                                                { ptn: '山口賢×夢城優花', skillList: ['po筋力10', 'po技術20', 'kiコントロールLv3', 'kiスタミナLv3', 'bl対左投手Lv2'] },
+                                                { ptn: '稲田吾作×桜ノ宮総司', skillList: ['po敏捷10', 'po技術40', 'po精神25', 'blヘッドスライディングLv4', 'blクイックLv2', 'blレーザービームLv1', 'doフライボールピッチャーLv1'] },
+                                                { ptn: '田村×本場あんこ', skillList: ['po筋力50', 'po技術40', 'go重戦車Lv1', 'blホーム突入Lv1', 'goド根性Lv1', 'bl根性〇Lv1', 'blケガしにくさLv2', 'bl闘志Lv1'] },
+                                                { ptn: 'ラミィ×内藤明瑠', skillList: ['po筋力30', 'po技術30', 'po精神10', 'go鉄人Lv1', 'blケガしにくさLv1', 'bl窮地〇Lv1', 'bl打たれ強さLv1'] },
+                                                { ptn: '望戸紅×小田切巧', skillList: ['po筋力40', 'po敏捷15', 'po技術20', 'po精神10', 'blダメ押しLv4', 'bl真っスラLv1', 'bl盗塁Lv2', 'bl緩急〇Lv3', 'suサブポジ三塁Lv1'] },
+                                                { ptn: '赤原勘八×香本富久雄', skillList: ['po筋力40', 'po精神30', 'kiミートLv3', 'bl全開Lv2', 'bl高速チャージLv1', 'bl回復Lv1', 're対ランナー×', 'de対ランナー×消すLv4'] },
+                                                { ptn: '天王寺×伍歩倫人', skillList: ['po敏捷20', 'po技術40', 'po精神10', 'goストライク送球Lv1', 'bl送球Lv1', 'bl守備職人Lv2', 'bl対ピンチLv1'] },
+                                                { ptn: '川星ほむら×バンガード', skillList: ['po筋力40', 'po敏捷10', 'po技術30', 'go一球入魂Lv1', 'bl初球〇Lv1', 'blパワーヒッターLv1', 'bl尻上がりLv1', 'suサブポジ一塁Lv1'] },
+                                                { ptn: '黒沢愛×塚見リフター', skillList: ['po筋力30', 'po敏捷10', 'po技術10', 'po精神20', 'blケガしにくさLv4', 'bl打たれ強さLv4', 'ki肩力Lv4'] },
+                                                { ptn: '松倉宗光×手塚隆文', skillList: ['po技術30', 'po変化球30', 'po精神20', 'blリベンジLv3', 'kiスタミナLv1', 'blバント〇Lv3', 'heパームLv1'] },
+                                                { ptn: '明星雪華×阿畑やすし', skillList: ['po技術20', 'po変化球40', 'po精神10', 'go驚異の切れ味Lv1', 'blキレ〇Lv1', 'bl対変化球〇Lv1', 'blリリース〇Lv2', 're一発', 'de一発消すLv4'] },
+                                                { ptn: '鷹野有紀×黒衛隆富', skillList: ['po敏捷5', 'po技術10', 'po変化球25', 'po精神20', 'blアベレージヒッターLv4', 'heサークルチェンジLv1', 'bl対左投手Lv1', 'bl勝ち運Lv1'] },
+                                                { ptn: '小鷹美麗×水木卓', skillList: ['po敏捷30', 'po技術30', 'po精神30', 'go大番狂わせLv1', 'bl意外性Lv1', 'blホーム死守Lv4', 'bl対左打者Lv1', 'suサブポジ捕手Lv1'] },
+                                                { ptn: '夢城和花×NCM-753', skillList: ['po敏捷20', 'po精神20', 'kiコントロールLv2', 'bl意外性Lv1', 'doポーカーフェイスLv1'] },
+                                                { ptn: '大一万大吉×東推八', skillList: ['po筋力25', 'po敏捷35', 'po技術20', 'goトリックスターLv1', 'blかく乱Lv1', 'blレーザービームLv4', 'blキレ〇Lv1', 'bl固め打ちLv2'] },
+                                                { ptn: '北斗八雲×尾根瑛人', skillList: ['po筋力30', 'po技術20', 'po精神10', 'blサヨナラ男Lv3', 'bl奪三振Lv3', 'heシンキングツーシームLv3', 'he(第2球種)シンキングツーシームLv2', 'bl対変化球〇Lv3'] },
+                                                { ptn: '江暦輝×嶋田栄作', skillList: ['po筋力20', 'po技術20', 'po精神20', 'blハイボールヒッターLv4', 'heツーシームファストLv1', 'bl逆境〇Lv1', 'bl打たれ強さLv3'] },
+                                                { ptn: '大塔俊二×納見新造', skillList: ['po敏捷25', 'po技術25', 'po精神20', 'ki走力Lv1', 'kiコントロールLv1', 'blインコースヒッターLv1', 'bl逃げ球Lv1'] },
+                                                { ptn: 'ロディ×虹谷彩理', skillList: ['po筋力20', 'po技術30', 'po変化球20', 'go不屈の魂Lv1', 'bl打たれ強さLv1', 'heDカーブLv1', 'blチャンスLv1'] },
+                                                { ptn: '清本和重×アンヌ', skillList: ['po筋力50', 'po技術40', 'po変化球30', 'goアーチストLv1', 'blパワーヒッターLv1', 'go怪物球威Lv1', 'bl重い球Lv1', 'kiパワーLv4', 'heフォークLv3', 'he(第2球種)フォークLv2'] },
+                                                { ptn: '辰猪一八×小嵐リョウ', skillList: ['po筋力25', 'po敏捷30', 'po技術15', 'go勝負師Lv1', 'blチャンスLv1', 'bl代打〇Lv3', 'bl回またぎ〇Lv1', 're三振', 'de三振消すLv4'] },
+                                                { ptn: 'アルヴィン×朱雀南赤', skillList: ['po筋力30', 'po敏捷10', 'po技術30', 'go高球必打Lv1', 'blハイボールヒッターLv1', 'goディレイドアームLv1', 'bl球持ち〇Lv1', 'bl国際大会〇Lv3', 'kiスタミナLv2', 're寸前', 'de寸前×消すLv4'] },
+                                                { ptn: '堺住吉×日和ミヨ', skillList: ['po敏捷20', 'po技術40', 'po精神20', 'goささやき戦術Lv1', 'ki弾道Lv3', 'bl打球反応〇Lv3', 're乱調', 'de乱調消すLv4'] },
+                                                { ptn: '戸内聖華×鶴屋勝', skillList: ['po技術40', 'po精神10', 'blカット打ちLv2', 'bl要所〇Lv1', 'heスライダーLv1'] },
+                                                { ptn: '六道聖×鎌刈善二', skillList: ['po敏捷10', 'po技術40', 'po精神10', 'go球界の頭脳Lv1', 'blキャッチャーLv1', 'ki捕球Lv1', 'bl対ピンチLv3'] },
+                                                { ptn: 'ジュリアス×涼風希望', skillList: ['po技術60', 'po精神20', 'go安打製造機Lv1', 'blアベレージヒッターLv1', 'go勝利の星Lv1', 'bl勝ち運Lv1', 'blムード〇Lv4', 'heチェンジアップLv4', 'he(第2球種)チェンジアップLv3'] },
+                                                { ptn: '猫神優×石野まさ夫', skillList: ['po筋力10', 'po敏捷35', 'po技術30', 'bl走塁Lv2', 'blキレ〇Lv1', 'blケガしにくさLv1', 'doゴロピッチャーLv2'] },
+                                                { ptn: '滝本太郎×須藤零人', skillList: ['po筋力30', 'po技術25', 'po精神20', 'go暴れ球Lv1', 'do荒れ球Lv1', 'ki弾道Lv1', 'bl対ストレート〇Lv1', 'bl根性〇Lv1'] },
+                                                { ptn: '球三郎×千代姫', skillList: ['po筋力15', 'po敏捷40', 'po技術15', 'po精神10', 'bl内野安打〇Lv3', 'bl回またぎ〇Lv3', 'bl対変化球〇Lv3', 'bl勝ち運Lv3'] },
+                                                { ptn: 'ランスロット×小山雅', skillList: ['po筋力30', 'po技術50', 'go走者釘付Lv1', 'blクイックLv1', 'blムード〇Lv3', 'bl緩急〇Lv1', 'heシンカーLv1'] },
+                                                { ptn: '古長衛士×カイル・モラレス', skillList: ['po筋力30', 'po敏捷30', 'po精神15', 'blカット打ちLv4', 'bl全開Lv3', 'ki弾道Lv1', 'bl尻上がりLv1'] },
+                                                { ptn: '獅乃木琢磨×佐菜あゆみ', skillList: ['po筋力30', 'po技術50', 'po変化球30', 'po精神10', 'go芸術的流し打ちLv1', 'bl流し打ちLv1', 'go闘魂Lv1', 'bl闘志Lv1', 'bl対左投手Lv3', 'ki球速Lv1'] },
+                                                { ptn: '勇村武士×番堂長児', skillList: ['po筋力20', 'po技術20', 'po変化球40', 'po精神10', 'kiミートLv1', 'heHシンカーLv1', 'blいぶし銀Lv2', 'bl重い球Lv4'] },
+                                                { ptn: '御宝金太郎×海野幸子', skillList: ['po筋力50', 'po技術40', 'go一球入魂Lv1', 'bl初球〇Lv1', 'bl送球Lv1', 'bl牽制〇Lv4', 'suサブポジ捕手Lv3'] },
+                                                { ptn: 'レッド×史門泰司', skillList: ['po筋力15', 'po技術25', 'po変化球25', 'po精神15', 'go勝利の星Lv1', 'bl勝ち運Lv1', 'do悪球打ちLv2', 'blクロスファイヤーLv3'] },
+                                                { ptn: '六本木優希×軽井沢大輝', skillList: ['po筋力10', 'po敏捷25', 'po技術30', 'po精神10', 'bl送球Lv2', 'bl緩急〇Lv1', 'ki守備力Lv1', 'suサブポジ遊撃Lv1'] },
+                                                { ptn: 'マイルマン×九十九宇宙', skillList: ['po筋力30', 'po技術25', 'po変化球20', 'po精神10', 'go恐怖の満塁男Lv1', 'bl満塁男Lv1', 'bl送球Lv3', 'bl対強打者〇Lv3', 'blインコースヒッターLv1'] },
+                                                { ptn: '乙女×水無月要', skillList: ['po筋力30', 'po技術30', 'po変化球10', 'blアウトコースヒッターLv1', 'heシュートLv2', 'he(第2球種)シュートLv1', 'bl国際大会〇Lv2', 'bl初球〇Lv4'] },
+                                                { ptn: '輝星也×灰塚朔夜', skillList: ['po筋力20', 'po敏捷40', 'po技術20', 'po精神10', 'go電光石火Lv1', 'bl盗塁Lv1', 'blホーム死守Lv1', 'bl緊急登板〇Lv4', 'bl満塁男Lv1'] },
+                                                { ptn: '水狐光世×灰谷充', skillList: ['po筋力20', 'po技術30', 'po精神20', 'bl満塁男Lv4', 'bl投打躍動Lv1', 'heHスライダーLv4', 'he(第2球種)スライダーLv3'] },
+                                                { ptn: '銭形乱蔵×円谷一義', skillList: ['po筋力50', 'po敏捷30', 'po変化球15', 'po精神20', 'bl走塁Lv3', 'bl投打躍動Lv3', 'kiスタミナLv4'] },
+                                                { ptn: '丸餅太×早川あおい', skillList: ['po筋力20', 'po技術15', 'po変化球35', 'po精神15', 'bl初球〇Lv3', 'bl立ち上がり〇Lv3', 'bl高速チャージLv2', 'bl内角攻めLv1', 'heカーブLv1'] },
+                                                { ptn: '一ノ瀬塔哉×マキシマム', skillList: ['po筋力30', 'po技術50', 'go気迫ヘッドLv1', 'blヘッドスライディングLv1', 'go本塁打厳禁Lv1', 'bl逃げ球Lv1', 'blホーム死守Lv2', 'bl立ち上がり〇Lv2'] },
+                                                { ptn: '猪狩守×戸井鉄男', skillList: ['po筋力30', 'po敏捷30', 'po技術20', 'po精神20', 'go安打製造機Lv1', 'blアベレージヒッターLv1', 'go主砲キラーLv1', 'bl対強打者〇Lv1', 'bl代打〇Lv3', 'bl球速安定Lv3', 'heカーブLv3', 'he(第2球種)カーブLv2'] },
+                                                { ptn: '猪狩守×鳴海悠斗', skillList: ['po筋力40', 'po技術40', 'po変化球30', 'po精神10', 'go左腕キラーLv1', 'bl対左投手Lv1', 'go主砲キラーLv1', 'bl対強打者〇Lv1', 'poパワーヒッターLv4', 'po勝ち運Lv4'] },
+                                                { ptn: '雲海和也×天城隼', skillList: ['po筋力20', 'po技術25', 'po変化球30', 'go完全燃焼Lv1', 'bl全開Lv1', 'blプルヒッターLv1', 'heVスライダーLv2', 'he(第2球種)VスライダーLv1'] },
+                                                { ptn: '江戸川文楽×斬金半馬', skillList: ['po筋力30', 'po敏捷20', 'po技術10', 'po精神15', 'kiミートLv4', 'bl闘志Lv2', 'bl内野安打〇Lv2'] },
+                                                { ptn: '東雲翔也×浪風芽衣香', skillList: ['po敏捷20', 'po技術40', 'po精神15', 'ki肩力Lv1', 'bl初球〇Lv2', 'bl球持ち〇Lv3', 'suサブポジ遊撃Lv1'] },
+                                                { ptn: '中之島幸宏×鈴本大輔', skillList: ['po筋力20', 'po敏捷30', 'po技術10', 'kiミートLv1', 'kiコントロールLv1', 'blプルヒッターLv4', 'bl内角攻めLv4'] },
+                                                { ptn: '有村佐治×純決太郎', skillList: ['po筋力40', 'po技術30', 'po変化球30', 'po精神20', 'go鉄の壁Lv1', 'blホーム死守Lv1', 'go超投打躍動Lv1', 'bl投打躍動Lv1', 'blいぶし銀Lv4', 'doポーカーフェイスLv4'] },
+                                                { ptn: '城井伯斎×三本松一', skillList: ['po筋力50', 'po敏捷40', 'po技術20', 'po精神10', 'blプルヒッターLv1', 'bl尻上がりLv1', 'blパワーヒッターLv2', 'bl回またぎ〇Lv2'] },
+                                                { ptn: '出井田大輔×四条賢二', skillList: ['po筋力40', 'po敏捷20', 'po技術10', 'po精神10', 'go球界の頭脳Lv1', 'blキャッチャーLv1', 'go鉄腕Lv1', 'bl投手調子安定Lv1', 'bl送球Lv2', 'bl球速安定Lv2'] },
+                                                { ptn: '鈴姫健太郎×宝塚月斗', skillList: ['po敏捷40', 'po技術20', 'po精神15', 'bl代打〇Lv1', 'he超スローボールLv2', 'bl流し打ちLv3', 'doゴロピッチャーLv4', 'reスロースターター', 'deスロースターター消すLv4'] },
+                                                { ptn: '八嶋中×武秀英', skillList: ['po筋力20', 'po敏捷30', 'po技術25', 'bl盗塁Lv1', 'bl対ランナー〇Lv1', 'bl内野安打〇Lv1', 'bl低め〇Lv1'] },
+                                                { ptn: '久遠ヒカル×上野良人', skillList: ['po敏捷15', 'po技術20', 'po変化球30', 'po精神10', 'heHシュートLv3', 'he(第2球種)HシュートLv2', 'bl守備職人Lv1', 'bl逆境〇Lv1', 'bl逃げ球Lv1', 're一発', 'de一発消すLv4'] },
+                                                { ptn: 'ミンミン×須々木清吾', skillList: ['po敏捷20', 'po技術40', 'po精神20', 'ki守備力Lv4', 'bl守備職人Lv4', 'bl打球反応〇Lv4'] },
+                                                { ptn: '浦賀有也×パピヨン', skillList: ['po筋力20', 'po技術25', 'po精神30', 'goメッタ打ちLv1', 'bl固め打ちLv1', 'bl高速チャージLv1', 'bl真っスラLv1', 'bl牽制〇Lv1', 'reムード×', 'deムード×消すLv4'] },
+                                                { ptn: 'ホールスアン4世×菊度アイラ', skillList: ['po筋力30', 'po技術40', 'po精神20', 'go外角必打Lv1', 'blアウトコースヒッターLv1', 'go怪童Lv1', 'blノビLv1', 'heカットボールLv1', 'heSFFLv1'] },
+                                                { ptn: '天音姫恋×セティーヌ', skillList: ['po筋力20', 'po敏捷40', 'po技術30', 'po精神30', 'go魔術師Lv1', 'bl守備職人Lv1', 'bl粘り打ちLv3', 'bl対ランナー〇Lv2'] },
+                                                { ptn: '塚見巴×美園千花', skillList: ['po筋力20', 'po技術40', 'po精神10', 'blパワーヒッターLv3', 'bl緩急〇Lv3', 'blホーム突入Lv2', 'bl投打躍動Lv2'] },
+                                                { ptn: '霧崎礼里×八尺巫女子', skillList: ['po筋力20', 'po敏捷40', 'po技術20', 'goロケットスタートLv1', 'bl内野安打〇Lv1', 'bl意外性Lv1', 'bl低め〇Lv1', 'suサブポジ遊撃Lv1'] },
+                                                { ptn: '夏野向日葵×紙山要', skillList: ['po筋力20', 'po敏捷30', 'po技術35', 'ki捕球Lv4', 'bl奪三振Lv4', 'bl代打〇Lv2', 'bl緊急登板〇Lv2'] },
+                                                { ptn: '橘みずき×星空星光', skillList: ['po敏捷30', 'po技術35', 'po変化球25', 'go逆襲Lv1', 'blリベンジLv1', 'bl代打〇Lv1', 'do荒れ球Lv4', 'bl緩急〇Lv1'] },
+                                                { ptn: 'ミッキー×福家花男', skillList: ['po筋力30', 'po敏捷20', 'po精神20', 'go外角必打Lv1', 'blアウトコースヒッターLv1', 'blリベンジLv4', 'bl回またぎ〇Lv4'] },
+                                                { ptn: '嵐丸士朗×館西勉', skillList: ['po技術40', 'po精神10', 'kiコントロールLv1', 'bl流し打ちLv4', 'blノビLv4', 'heシンカーLv1'] },
+                                                { ptn: 'ザンス×ブロンコ・リー', skillList: ['po敏捷30', 'po技術40', 'goロケットスタートLv1', 'bl内野安打〇Lv1', 'blチャンスLv3', 'blキレ〇Lv3'] },
+                                                { ptn: '桜沢樹×鋼毅', skillList: ['po筋力10', 'po技術40', 'blプルヒッターLv4', 'bl対ピンチLv4', 'bl逃げ球Lv2', 'do悪球打ちLv1'] },
+                                                { ptn: '太刀川広巳×軍導英雄', skillList: ['po筋力50', 'kiミートLv2', 'blケガしにくさLv1', 'blクロスファイヤーLv1', 'blホーム突入Lv1'] },
+                                                { ptn: '真黒綱寛×鮫島粂太郎', skillList: ['po筋力30', 'po敏捷20', 'po精神30', 'ki走力Lv3', 'ki球速Lv1', 'bl走塁Lv3', 'bl対ランナー〇Lv1'] },
+                                                { ptn: '村雨×久方怜', skillList: ['po敏捷20', 'po技術30', 'po精神10', 'go高速ベースランLv1', 'bl走塁Lv1', 'bl守備職人Lv1', 'bl対強打者〇Lv1'] },
+                                                { ptn: '掘杉等×梶増人', skillList: ['po筋力30', 'po敏捷10', 'po技術20', 'goトップギアLv1', 'bl立ち上がり〇Lv1', 'blホーム突入Lv4', 'bl尻上がりLv4'] },
+                                                { ptn: 'オクタヴィア×矢倍萌雄', skillList: ['po敏捷20', 'po技術30', 'po変化球20', 'po精神10', 'blかく乱Lv3', 'bl低め〇Lv3', 'bl流し打ちLv2', 'heスラーブLv1'] },
+                                                { ptn: '堂江竜河×西郷十三', skillList: ['po筋力60', 'blいぶし銀Lv3', 'kiコントロールLv4', 'blローボールヒッターLv2', 'bl奪三振Lv1'] },
+                                                { ptn: '三森右京×猪狩進', skillList: ['po敏捷30', 'po技術30', 'po精神15', 'blキャッチャーLv4', 'bl回復Lv1', 'blプレッシャーランLv3', 'bl打球反応〇Lv1'] },
+                                                { ptn: '外藤侠二×五十嵐権三', skillList: ['po筋力30', 'po敏捷20', 'po技術20', 'goドクターK Lv1', 'bl奪三振Lv1', 'ki肩力Lv1', 'doゴロピッチャーLv1'] },
+                                                { ptn: 'ヴィクター×金原いずる', skillList: ['po筋力30', 'po技術50', 'po精神40', 'go広角砲Lv1', 'bl広角打法Lv1', 'go精密機械Lv1', 'bl低め〇Lv1', 'ki弾道Lv2', 'bl緊急登板〇Lv1'] },
+                                                { ptn: '鞍馬貴史×姫野カレン', skillList: ['po筋力20', 'po技術15', 'po変化球25', 'po精神10', 'bl流し打ちLv1', 'bl球速安定Lv4', 'heナックルLv1'] },
+                                                { ptn: '星井スバル×皇帝', skillList: ['po筋力10', 'po技術50', 'po変化球50', 'po精神10', 'goメッタ打ちLv1', 'bl固め打ちLv1', 'go驚異の切れ味Lv1', 'blキレ〇Lv1', 'blアウトコースヒッターLv3', 'bl内角攻めLv3'] },
+                                                { ptn: 'グラビトン新井×烏丸剛充', skillList: ['po筋力50', 'po技術40', 'go勝負師Lv1', 'blチャンスLv1', 'go完全燃焼Lv1', 'do全開Lv1', 'bl粘り打ちLv2', 'bl根性〇Lv2'] },
+                                                { ptn: '大鐘餅太郎×楽垣吾助', skillList: ['po筋力20', 'po敏捷10', 'po技術40', 'bl広角打法Lv4', 'bl対左打者Lv1', 'blダメ押しLv3', 'bl回復Lv2', 'suサブポジ外野Lv1'] },
+                                                { ptn: '佐賀巌×友沢亮', skillList: ['po筋力40', 'po敏捷40', 'po技術30', 'po精神20', 'go逆襲Lv1', 'blリベンジLv1', 'go不屈の魂Lv1', 'bl打たれ強さLv1', 'blアベレージヒッターLv2', 'bl対強打者〇Lv2', 'ki肩力Lv2'] },
+                                                { ptn: 'ニセプロ×クロン', skillList: ['po筋力30', 'po技術30', 'po変化球25', 'po精神15', 'go精密機械Lv1', 'bl低め〇Lv1', 'blダメ押しLv1', 'blリリース〇Lv1', 'reエラー', 'deエラー消すLv4'] },
+
+
+                                                //3combo
+                                                { ptn: '夢城和花×新島早紀×NCM-753', skillList: ['po筋力30', 'po敏捷70', 'po技術40', 'po精神30', 'go鉄人Lv1', 'blケガしにくさLv1', 'go鉄腕Lv1', 'bl投手調子安定Lv1', 'go代打の神様Lv1', 'bl代打〇Lv1', 'go左キラーLv1', 'bl対左打者Lv1', 'go鉄の壁Lv1', 'blホーム死守Lv1'] },
+                                                { ptn: '塚見巴×美園千花×千代姫', skillList: ['po筋力40', 'po敏捷40', 'po技術50', 'po変化球20', 'po精神20', 'go重戦車Lv1', 'blホーム突入Lv1', 'goハイスピンジャイロLv1', 'blジャイロボールLv1', 'go内角必打Lv1', 'blインコースヒッターLv1', 'go暴れ球Lv1', 'bl荒れ球Lv1', 'goエースキラーLv1', 'bl対エース〇Lv1'] },
+                                                { ptn: '藤堂まひる×魁竜司×青葉春人', skillList: ['po筋力50', 'po敏捷40', 'po技術70', 'po変化球20', 'po精神20', 'go伝説のサヨナラ男Lv1', 'blサヨナラ男Lv1', 'goクロスキャノンLv1', 'blクロスファイヤーLv1', 'go引っ張り屋Lv1', 'blプルヒッターLv1', 'go本塁打厳禁Lv1', 'bl逃げ球Lv1', 'go走者釘付Lv1', 'blクイックLv1'] },
+                                                { ptn: '江暦輝×嶋田栄作×社長', skillList: ['po筋力70', 'po技術50', 'po変化球40', 'po精神20', 'go高球必打Lv1', 'blハイボールヒッターLv1', 'go変幻自在Lv1', 'bl緩急〇Lv1', 'goバズーカ送球Lv1', 'go怪童Lv1', 'blノビLv1', 'go内角無双Lv1', 'bl内角攻めLv1'] },
+                                                { ptn: 'ラミィ×内藤明瑠×掘杉等', skillList: ['po筋力70', 'po敏捷30', 'po技術50', 'po精神30', 'go芸術的流し打ちLv1', 'bl流し打ちLv1', 'go怪物球威Lv1', 'bl重い球Lv1', 'go低球必打Lv1', 'blローボールヒッターLv1', 'goギアチェンジLv1', 'go高速ベースランLv1', 'bl走塁Lv1'] },
+                                            ];
+                                            const $tab = $('#tab');
+                                            const $tabBtn = $tab.find('input[type=radio]'); //対戦ラウンドボタン
+                                            const $teamList = $('#teamList');
+                                            const $teamCell = $("#teamsCell");
+                                            const $table = $('#resultTable'); //検索結果を入れる場所
+                                            $tabBtn.change(function () {
+                                                let $search = $(this).val();
+                                                $teamCell.find('div').remove(); //表示されている対戦ラウンドのチームを削除
+                                                $teamList.removeClass().addClass($search); //背景色クラスを変更
+                                                $tab.find('p.' + $search).css('border-bottom-color', 'transparent');
+                                                $tab.find('p').not('.' + $search).css('border-bottom-color', '#333');
+                                                let tlist = $('<div />', { id: $search }); //対戦ラウンドごとのチームリスト
+                                                $teamCell.append(tlist);
+                                                $table.find('tbody').remove();
+                                                for (let i = 0; i < teams.length; i++) {
+                                                    let team = teams[i];
+                                                    if (team.match.indexOf($search) >= 0) { //対戦ラウンドに該当するチームを検索
+                                                        var color = "black";
+                                                        if (team.team.match("(PTV)")) color = "red";
+                                                        if (team.team.match("(INF)")) color = "blue";
+                                                        let label = $('<label />')
+                                                            .append($('<input>', { name: $search, type: "checkbox", value: team.value }))
+                                                            .append($('<span>', { text: team.team, style: "color: " + color}));
+                                                        tlist.append(label);
+                                                    }
+                                                    //checkboxの選択処理
+                                                    $('input[value=' + team.value + ']').change(function () {
+                                                        let target = $(this).val();
+                                                        if ($(this).prop('checked')) {
+                                                            //チェックが入った
+                                                            let tbody = $('<tbody />', { id: target }); //チームごとのtbody
+                                                            tbody.append($('<tr />').append($('<th />', { colspan: 2, text: team.team }))); //チーム名表示
+                                                            $table.prepend(tbody);
+                                                            for (let p = 0; p < team.players.length; p++) {
+                                                                let player = team.players[p]; //選手名
+                                                                for (let c = 0; c < combo.length; c++) {
+                                                                    let ptn = combo[c]; //コンボデータ
+                                                                    let pattern = ptn.ptn.split('×');
+                                                                    if (pattern.indexOf(player) >= 0) { //選手名でコンボを検索
+                                                                        let tr = $('<tr />');
+                                                                        let th = $('<th />');
+                                                                        for (let j = 0; j < pattern.length; j++) {
+                                                                            if (player === pattern[j]) {//検索したチームの選手
+                                                                                th.prepend($('<div />', { class: 'hit' }));
+                                                                                th.find('.hit').append($('<p />', { text: pattern[j] }));
+                                                                                th.find('.hit').append($('<p />', { text: team.team }));
+                                                                            } else {//検索したチーム以外の選手
+                                                                                //th.append($('<div />', {text: pattern[j],class: 'other'}));
+                                                                                for (let tm = 0; tm < teams.length; tm++) {
+                                                                                    for (let pid = 0; pid < teams[tm].players.length; pid++) {
+                                                                                        let pclass = 'player' + tm + '-' + pid; //選手のclass名
+                                                                                        if (pattern[j] === teams[tm].players[pid]) {
+                                                                                            th.append($('<div />', { class: 'other ' + pclass }));
+                                                                                            th.find('.' + pclass).append($('<p />', { text: pattern[j] }));
+                                                                                            th.find('.' + pclass).append($('<p />', { text: teams[tm].team }));
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        tr.append(th);
+                                                                        let td = $('<td />');
+                                                                        for (let s = 0; s < ptn.skillList.length; s++) {
+                                                                            let skillType = ptn.skillList[s].slice(0, 2);
+                                                                            let skill = ptn.skillList[s].slice(2);
+                                                                            let span = $('<span />', { text: skill, class: skillType });
+                                                                            td.append(span);
+                                                                        }
+                                                                        tr.append(td);
+                                                                        tbody.append(tr);
+                                                                    }
+                                                                }
+                                                            }
+                                                        } else {
+                                                            //チェックが外れた
+                                                            $('#' + target).remove();
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                            $('input[type=radio]:checked').trigger('change');
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+
+                </main>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!--scroll-content-->
+    </div>
+    <!--wrapper-->
+
+</body>
+
+</html>
